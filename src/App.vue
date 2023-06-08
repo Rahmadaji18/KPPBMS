@@ -1,30 +1,55 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <NavComp></NavComp>
+  <RouterView />
 </template>
 
-<style lang="scss">
+<script>
+// import HomeView from "@/views/HomeView.vue";
+import NavComp from "./components/home/NavComp.vue";
+export default {
+  name: "app",
+  components: {
+    // HomeView,
+    NavComp,
+  },
+};
+</script>
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,700&display=swap");
+
+:root {
+  --biru: #002855;
+  --kuning: #ffd460;
+  --putih: #fff;
+}
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  box-sizing: border-box;
+  margin: auto;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 15px;
+  font-family: Poppins, Montserrat, sans-serif;
+}
+
+/* Apply negative margins to the components */
+Header,
+Landing,
+About {
+  margin-top: -20px;
+}
+</style>
+
+<!-- <style lang="scss">
+#app {
+  font-family: Poppins, Montserrat, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
 }
-
-nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
-</style>
+</style> -->
