@@ -3,9 +3,7 @@
     <div class="footer_main">
       <div class="footer_info">
         <H2>Contact Us</H2>
-        <p>Jalan Ploso Timur VA No.60, Kec. Tambaksari, Surabaya, Indonesia</p>
-        <p><bold>Email : inikaryakita20@gmail.com</bold></p>
-        <a href="tel-phone"><i class="fa fa-phone"></i>Phone : (+62)-8214-0759-677</a>
+        <p>Jalan Ploso Timur VA No.60, Kec. Tambaksari, Surabaya, Indonesia<br />Email : inikaryakita20@gmail.com<br />Phone : (+62)-8214-0759-677</p>
       </div>
       <div class="footer_link">
         <h2>Useful Links</h2>
@@ -65,7 +63,7 @@ export default {
   /* flex-direction: row; */
   justify-content: space-around;
   flex-wrap: wrap;
-  padding: 7rem 0.5rem;
+  padding: 2rem 0.5rem;
 }
 
 .footer_main {
@@ -76,13 +74,22 @@ export default {
 .footer_main div {
   width: 300px;
 }
-.footer_link .link_column a,
+
 .footer_main .footer_info p {
   font-size: 0.9rem;
-  font-weight: bolder;
+
+  color: #002e5f;
 }
-.footer_main .footer_info a {
-  font-weight: bolder;
+.footer_main .footer_info a,
+.footer_link .link_column a {
+  text-decoration: none;
+  color: #002e5f;
+}
+
+.footer_main .footer_info a,
+.footer_link .link_column a:hover {
+  text-decoration: none;
+  font-weight: bold;
   color: #002e5f;
 }
 
@@ -102,20 +109,20 @@ export default {
 }
 
 .footer_secondary {
-  padding: 48px auto;
+  padding: 24px auto;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
   align-items: center;
   background-color: #ffd460;
-  height: 120px;
+  height: 80px;
   width: 100%;
 }
 
 .footer_secondary p {
   /*align-items: center;*/
   text-align: center;
-  font-weight: bolder;
+  /* font-weight: bolder; */
   color: #002e5f;
 }
 .footer_secondary p i {
@@ -161,6 +168,7 @@ export default {
   color: var(--putih);
   padding: 8px 15px;
   margin-top: 20px;
+  cursor: pointer;
   border-radius: 10px;
   box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.3);
   transition: transform 0.3s;
@@ -168,6 +176,6 @@ export default {
   font-size: 24px;
 }
 .footer_schedule .btn:hover {
-  transform: scale(1.1);
+  transform: scale(0.9);
 }
 </style>

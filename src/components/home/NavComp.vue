@@ -25,10 +25,10 @@ export default {
     return {
       logo: logo,
       header1: [
-        { nav: "About", ref: "#about" },
-        { nav: "Service", ref: "#service" },
-        { nav: "Schedule", ref: "#schedule" },
-        { nav: "FAQ", ref: "#faq" },
+        { nav: "About", ref: "about" },
+        { nav: "Service", ref: "service" },
+        { nav: "Schedule", ref: "schedule" },
+        { nav: "FAQ", ref: "faq" },
       ],
     };
   },
