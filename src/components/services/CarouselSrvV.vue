@@ -1,16 +1,13 @@
 <template>
-  <div class="bg" id="latestprojects">
-    <h1>Latest Project</h1>
+  <div class="bg">
+    <h1>Our Portofolio</h1>
     <div class="bgc">
       <Carousel :autoplay="2000" :itemsToShow="3.95" :wrapAround="true" :transition="500" :breakpoints="breakpoints">
         <Slide v-for="slide in images" :key="slide">
           <img class="carousel__item" :src="slide" />
         </Slide>
         <!-- <Navigation class="nav" /> -->
-        <template #addons>
-          <Pagination />
-          <!-- <Navigation /> -->
-        </template>
+        <template #addons> </template>
       </Carousel>
     </div>
   </div>
@@ -18,9 +15,10 @@
 
 <script>
 import { defineComponent } from "vue";
-import { Carousel, Pagination, Slide } from "vue3-carousel";
+import { Carousel, Slide } from "vue3-carousel";
 
 import "vue3-carousel/dist/carousel.css";
+
 import prj1 from "@/assets/images/prj1.png";
 import prj2 from "@/assets/images/prj2.png";
 import prj3 from "@/assets/images/prj3.png";
@@ -30,14 +28,14 @@ import prj6 from "@/assets/images/prj6.png";
 import prj7 from "@/assets/images/prj7.png";
 import prj8 from "@/assets/images/prj8.png";
 import prj9 from "@/assets/images/prj9.png";
-// import { thisExpression } from "@babel/types";
 
 export default defineComponent({
-  name: "CarouselComp",
+  name: "CarouselServices",
   components: {
     Carousel,
     Slide,
-    Pagination,
+    // Pagination,
+    // Navigation,
   },
   data() {
     return {
@@ -69,18 +67,18 @@ export default defineComponent({
   justify-items: center;
   padding-top: 70px;
   padding-bottom: 100px;
-  gap: 3rem;
+  gap: 39px;
+  background-color: var(--biru);
 }
 
 .bgc {
   width: 80%;
-  height: auto;
 }
 
 .bg h1 {
   font-family: "Montserrat", sans-serif;
   font-size: 60px;
-  color: var(--biru);
+  color: var(--putih);
   margin: auto;
 }
 

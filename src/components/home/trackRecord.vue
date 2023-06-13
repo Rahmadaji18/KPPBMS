@@ -5,29 +5,31 @@
         <h1>We Are Always Innovate</h1>
       </div>
       <div>
-        <i class="fas fa-gift fa-4x"></i>
-        <div class="counter" data-target="720">3</div>
-        <h2>Years<br />Experience</h2>
+        <vue3-autocounter class="num" ref="counter" :startAmount="0" :endAmount="1080" :duration="15" prefix="" suffix="" separator="" decimalSeparator="" :decimals="0" :autoinit="true" />
+        <h2>Days<br />Experience</h2>
       </div>
       <div>
-        <i class="fas fa-users fa-4x"></i>
-        <div class="counter" data-target="480">141</div>
+        <vue3-autocounter class="num" ref="counter" :startAmount="0" :endAmount="348" :duration="15" prefix="" suffix="" separator="" decimalSeparator="" :decimals="0" :autoinit="true" />
         <h2>Projects<br />Completed</h2>
       </div>
       <div>
-        <i class="fas fa-award fa-4x"></i>
-        <div class="counter" data-target="120">100</div>
-        <h2>total<br />Clients</h2>
+        <vue3-autocounter class="num" ref="counter" :startAmount="0" :endAmount="328" :duration="15" prefix="" suffix="" separator="" decimalSeparator="" :decimals="0" :autoinit="true" />
+        <h2>Total<br />Clients</h2>
       </div>
     </div>
   </section>
 </template>
 
 <script>
-export default {
+import { defineComponent } from "vue";
+import Vue3autocounter from "vue3-autocounter";
+
+export default defineComponent({
   name: "trackRecord",
-  props: {},
-};
+  components: {
+    "vue3-autocounter": Vue3autocounter,
+  },
+});
 </script>
 
 <style scoped>
@@ -60,7 +62,7 @@ export default {
   margin-left: 60px;
 }
 
-.counter {
+.num {
   font-weight: bold;
 }
 h2 {
@@ -73,7 +75,7 @@ h2 {
   margin-bottom: 5px;
 }
 
-.counters .counter {
+.counters .num {
   font-size: 45px;
   margin: 10px 0;
 }

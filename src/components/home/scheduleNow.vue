@@ -5,14 +5,35 @@
       Tim kreatif kami akan dengan senang hati membahas kebutuhan pembuatan branding <br />
       yang sesuai dengan keinginan Kamu.
     </p>
-    <a href="#"><button class="btn">Schedule Now</button></a>
+    <button class="btn" @click="showAlert">Schedule Now</button>
   </div>
 </template>
 
 <script>
+import Swal from "sweetalert2/dist/sweetalert2.js";
+import "sweetalert2/src/sweetalert2.scss";
+
 export default {
   name: "scheduleNow",
   props: {},
+  methods: {
+    showAlert() {
+      // Use sweetalert2
+      Swal.fire({
+        icon: "error",
+        title: "Kamu Harus Login/Signup",
+        text: "Menu ini hanya bisa digunakan jika kamu sudah melakukan login/signup",
+        footer: '<a href="login">Login Sekarang</a>',
+        confirmButtonText: "Okey",
+        customClass: {
+          title: "swal2-title",
+          text: "swal2-textarea",
+          confirmButtonText: "swal2-confirm",
+          footer: "swal2-footer",
+        },
+      });
+    },
+  },
 };
 </script>
 
@@ -23,6 +44,7 @@ export default {
   border-radius: 1rem;
   background: #ffd460;
   font-size: 1.5rem;
+  font-weight: 600;
   cursor: pointer;
   height: 3.5rem;
   width: 12rem;

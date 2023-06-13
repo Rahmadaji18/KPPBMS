@@ -1,7 +1,7 @@
 <template>
-  <div class="bg">
+  <div class="bg" id="faq">
     <div class="container">
-      <h1>Frequently asked questions</h1>
+      <h1>Frequently Asked Questions</h1>
       <div id="faqs">
         <div v-for="(item, index) in data" :key="index" class="faq">
           <div class="question" @click="toggleAnswer(index)">
@@ -79,7 +79,7 @@ export default {
   max-width: 1000px;
   min-width: 300px;
   margin: -20px auto 0;
-  padding: 0 0.5rem;
+  padding: 5rem;
   background-color: var(--biru);
 }
 

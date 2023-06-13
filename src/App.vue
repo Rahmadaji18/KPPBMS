@@ -1,16 +1,13 @@
 <template>
-  <NavComp></NavComp>
   <RouterView />
 </template>
 
 <script>
 // import HomeView from "@/views/HomeView.vue";
-import NavComp from "./components/home/NavComp.vue";
 export default {
   name: "app",
   components: {
     // HomeView,
-    NavComp,
   },
 };
 </script>
@@ -32,8 +29,8 @@ export default {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-size: 15px;
   font-family: Poppins, Montserrat, sans-serif;
+  scroll-behavior: smooth !important;
 }
 
 /* Apply negative margins to the components */

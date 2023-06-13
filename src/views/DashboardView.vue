@@ -1,4 +1,5 @@
 <template>
+  <NavComp></NavComp>
   <div class="landing">
     <div class="first">
       <div class="kata">
@@ -8,49 +9,82 @@
           <h1 class="kuning">Ini Karya Kita</h1>
         </div>
         <p>Temukan penawaran layanan branding terbaikmu<br />dalam 1 platformdengan sistem <i>One Door Branding Services.</i></p>
-        <button class="btnl" @click="showAlert">Schedule</button>
+        <a href="#"><button class="btnl">Schedule</button></a>
       </div>
       <img :src="gambar" />
     </div>
   </div>
+  <AboutUs />
+  <OurService />
+  <trackRecord> </trackRecord>
+  <CarouselComp />
+  <scheduleNow> </scheduleNow>
+  <FAQComp />
+  <footerCom></footerCom>
 </template>
 
 <script>
+import NavComp from "@/components/home/NavComp.vue";
+import AboutUs from "@/components/home/homeAboutUs.vue";
+import OurService from "@/components/home/homeOurService.vue";
+import FAQComp from "@/components/home/FAQComp.vue";
+import CarouselComp from "@/components/home/CarouselComp.vue";
+import trackRecord from "@/components/home/trackRecord.vue";
+import scheduleNow from "@/components/home/scheduleNow.vue";
+import footerCom from "@/components/home/footerCom.vue";
 import gambar from "@/assets/images/Marketing.png";
-import Swal from "sweetalert2/dist/sweetalert2.js";
-import "sweetalert2/src/sweetalert2.scss";
 
 export default {
-  name: "LandingPage",
-  props: {},
-
+  name: "DashboardView",
+  components: {
+    NavComp,
+    AboutUs,
+    OurService,
+    trackRecord,
+    CarouselComp,
+    scheduleNow,
+    FAQComp,
+    footerCom,
+  },
   data() {
     return {
       gambar: gambar,
     };
   },
-  methods: {
-    showAlert() {
-      // Use sweetalert2
-      Swal.fire({
-        icon: "error",
-        title: "Kamu Harus Login/Signup",
-        text: "Menu ini hanya bisa digunakan jika kamu sudah melakukan login/signup",
-        footer: '<a href="login">Login Sekarang</a>',
-        confirmButtonText: "Okey",
-        customClass: {
-          title: "swal2-title",
-          text: "swal2-textarea",
-          confirmButtonText: "swal2-confirm",
-          footer: "swal2-footer",
-        },
-      });
-    },
-  },
 };
 </script>
 
 <style scoped>
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,700&display=swap");
+:root {
+  --biru: #002855;
+  --kuning: #ffd460;
+  --putih: #fff;
+}
+
+#app {
+  box-sizing: border-box;
+  margin: auto;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 15px;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Apply negative margins to the components */
+NavComp,
+LandDash,
+AboutUs {
+  margin-top: -20px;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,700&display=swap");
+
+/* Landing Dashboard */
 .landing {
   background: linear-gradient(90deg, #002855, #001635);
   align-content: center;

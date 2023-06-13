@@ -9,11 +9,11 @@
         <h2>Useful Links</h2>
         <div class="link_column">
           <div>
-            <a href="">Home</a>
-            <a href="">About Us</a>
-            <a href="">Our Service</a>
-            <a href="">Latest Project</a>
-            <a href="">FAQ</a>
+            <a href="/">Home</a>
+            <a href="about">About Us</a>
+            <a href="#ourservices">Our Service</a>
+            <a href="#latestprojects">Latest Project</a>
+            <a href="#faq">FAQ</a>
           </div>
         </div>
       </div>
@@ -23,7 +23,7 @@
           Jika kamu tertarik dengan layanan <br />
           branding kami, segera jadwalkan untuk berdiskusi bersama secara gratis.
         </p>
-        <a href="#"><button class="btn">Schedule Now</button></a>
+        <button class="btn" @click="showAlert">Schedule Now</button>
       </div>
     </div>
     <div class="footer_secondary">
@@ -33,9 +33,30 @@
 </template>
 
 <script>
+import Swal from "sweetalert2/dist/sweetalert2.js";
+import "sweetalert2/src/sweetalert2.scss";
+
 export default {
   name: "footerCom",
   props: {},
+  methods: {
+    showAlert() {
+      // Use sweetalert2
+      Swal.fire({
+        icon: "error",
+        title: "Kamu Harus Login/Signup",
+        text: "Menu ini hanya bisa digunakan jika kamu sudah melakukan login/signup",
+        footer: '<a href="login">Login Sekarang</a>',
+        confirmButtonText: "Okey",
+        customClass: {
+          title: "swal2-title",
+          text: "swal2-textarea",
+          confirmButtonText: "swal2-confirm",
+          footer: "swal2-footer",
+        },
+      });
+    },
+  },
 };
 </script>
 

@@ -2,7 +2,13 @@ import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import LoginView from "../views/LoginView.vue";
 import SignupView from "../views/SignupView.vue";
-import AboutView from "../views/AboutView.vue"
+import AboutView from "../views/AboutView.vue";
+import PhotoView from "../views/PhotoView.vue";
+import VideoView from "../views/VideoView.vue";
+import DesignView from "../views/DesignView.vue";
+import WebView from "../views/WebView.vue";
+// import DashboardView from "../views/DashboardView.vue";
+import NotfoundView from "../views/NotfoundView.vue";
 
 const routes = [
   {
@@ -33,7 +39,36 @@ const routes = [
     name: "about",
     component: AboutView,
   },
-
+  {
+    path: "/photography",
+    name: "photography",
+    component: PhotoView,
+  },
+  {
+    path: "/videography",
+    name: "videography",
+    component: VideoView,
+  },
+  {
+    path: "/graphicsdesign",
+    name: "graphicsdesign",
+    component: DesignView,
+  },
+  {
+    path: "/webdevelopment",
+    name: "webdevelopment",
+    component: WebView,
+  },
+  // {
+  //   path: "/dashboard",
+  //   name: "dashboard",
+  //   component: DashboardView,
+  // },
+  {
+    path: "/error404",
+    name: "error404",
+    component: NotfoundView,
+  },
 ];
 
 const router = createRouter({

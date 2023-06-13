@@ -8,7 +8,7 @@
           Ini Karya Kita merupakan platform layanan branding satu pintu yang menyediakan berbagai macam jasa untuk mengembangkan branding desa wisata, event, instansi, UMKM dan sebagainya. Kamu juga bisa berdiskusi dan berkonsultasi terkait
           metode brandingmu bersama kami secara gratis.
         </p>
-        <button class="btna">View More</button>
+        <a href="about"><button class="btna">View More</button></a>
       </div>
     </div>
   </div>
@@ -36,12 +36,12 @@ export default {
 
 .about {
   display: flex;
-  width: 88%;
-  margin: auto;
+  width: 100%;
+  padding-inline: 10rem;
   justify-content: space-between;
   gap: 50px;
-  padding-top: 150px;
-  padding-bottom: 150px;
+  padding-top: 100px;
+  padding-bottom: 100px;
 }
 
 .kataa {
@@ -54,13 +54,13 @@ export default {
 }
 
 .kataa h1 {
-  font-size: 64px;
-  font-weight: bold;
+  font-size: 3rem;
+  font-weight: bolder;
   font-family: "Montserrat", sans-serif;
 }
 
 .kataa p {
-  font-size: 24px;
+  font-size: 20px;
   font-family: "Poppins", sans-serif;
 }
 

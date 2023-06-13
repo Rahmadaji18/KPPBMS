@@ -1,12 +1,11 @@
 /* eslint-disable */
 
 <template>
-<NavComp></NavComp>
-<LandingPage></LandingPage>
-<OurMission></OurMission>
-<OurTeam></OurTeam>
-<footerCom></footerCom>
-
+  <NavComp></NavComp>
+  <LandingPage></LandingPage>
+  <OurMission></OurMission>
+  <OurTeam></OurTeam>
+  <footerCom></footerCom>
 </template>
 
 <script>
@@ -23,17 +22,12 @@ export default {
     LandingPage,
     OurMission,
     OurTeam,
-    footerCom
+    footerCom,
   },
 };
-
 </script>
 
-
-
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Poppins&display=swap');
-
-
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Poppins&display=swap");
 </style>
