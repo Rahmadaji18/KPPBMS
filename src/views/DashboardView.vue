@@ -1,14 +1,14 @@
 <template>
-  <NavComp></NavComp>
+  <NavDash></NavDash>
   <div class="landing">
     <div class="first">
       <div class="kata">
         <div class="judul">
-          <h1>Hello!</h1>
-          <h1>Welcome To</h1>
-          <h1 class="kuning">Ini Karya Kita</h1>
+          <h1>Hello, Iki Adfi</h1>
+          <h2 class="kuning">Welcome Back To</h2>
+          <h2 class="kuning">Ini Karya Kita</h2>
         </div>
-        <p>Temukan penawaran layanan branding terbaikmu<br />dalam 1 platformdengan sistem <i>One Door Branding Services.</i></p>
+        <p>Temukan penawaran layanan branding terbaikmu<br />dalam 1 platform dengan sistem <i>One Door Branding Services.</i></p>
         <a href="#"><button class="btnl">Schedule</button></a>
       </div>
       <img :src="gambar" />
@@ -24,7 +24,6 @@
 </template>
 
 <script>
-import NavComp from "@/components/home/NavComp.vue";
 import AboutUs from "@/components/home/homeAboutUs.vue";
 import OurService from "@/components/home/homeOurService.vue";
 import FAQComp from "@/components/home/FAQComp.vue";
@@ -33,11 +32,11 @@ import trackRecord from "@/components/home/trackRecord.vue";
 import scheduleNow from "@/components/home/scheduleNow.vue";
 import footerCom from "@/components/home/footerCom.vue";
 import gambar from "@/assets/images/Marketing.png";
+import NavDash from "@/components/dashboard/NavDash.vue";
 
 export default {
   name: "DashboardView",
   components: {
-    NavComp,
     AboutUs,
     OurService,
     trackRecord,
@@ -45,6 +44,7 @@ export default {
     scheduleNow,
     FAQComp,
     footerCom,
+    NavDash,
   },
   data() {
     return {
@@ -76,7 +76,7 @@ export default {
 }
 
 /* Apply negative margins to the components */
-NavComp,
+NavDash,
 LandDash,
 AboutUs {
   margin-top: -20px;
@@ -125,7 +125,15 @@ i {
 }
 
 .judul h1 {
-  font-size: 70px;
+  font-size: 50px;
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.judul h2 {
+  font-size: 50px;
   color: #fff;
   font-family: "Montserrat", sans-serif;
   font-weight: 800;

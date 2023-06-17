@@ -36,7 +36,7 @@
     <div id="right">
       <div id="showcase">
         <div class="showcase-content">
-          <h1 class="showcase-text">Not a Special Client?<br />Dont't Worries</h1>
+          <h1 class="showcase-text">Not a Special Client?<br />Don't Worries</h1>
           <router-link to="/signup" class="third-btn">Sign Up Here</router-link>
         </div>
       </div>
@@ -46,6 +46,8 @@
 
 <script>
 import axios from "axios";
+import Swal from "sweetalert2/dist/sweetalert2.js";
+import "sweetalert2/src/sweetalert2.scss";
 
 export default {
   name: "loginView",
@@ -59,16 +61,56 @@ export default {
   methods: {
     login: function () {
       axios
-        .post("http://localhost:8080/login", {
+        .post("http://localhost:8081/login", {
           username: this.username,
           password: this.password,
         })
         .then((res) => {
-          alert(res.data);
-          console.log(res);
+          if (res.data === "Login Success") {
+            Swal.fire({
+              title: "Success",
+              text: "Login Successful",
+              icon: "success",
+              customClass: {
+                title: "swal2-title",
+                text: "swal2-textarea",
+                confirmButtonText: "swal2-confirm",
+                footer: "swal2-footer",
+                popup: "swal-popup",
+              },
+            }).then(() => {
+              localStorage.setItem("loggedIn", true);
+              // Redirect to homepage
+              this.$router.push("/dashboard");
+            });
+          } else {
+            Swal.fire({
+              title: "Warning",
+              text: "Incorrect Username and/or Password",
+              icon: "error",
+              customClass: {
+                title: "swal2-title",
+                text: "swal2-textarea",
+                confirmButtonText: "swal2-confirm",
+                footer: "swal2-footer",
+                popup: "swal-popup",
+              },
+            });
+          }
         })
         .catch((err) => {
-          alert("Login Error");
+          Swal.fire({
+            title: "Error",
+            text: "Login Error",
+            icon: "error",
+            customClass: {
+              title: "swal2-title",
+              text: "swal2-textarea",
+              confirmButtonText: "swal2-confirm",
+              footer: "swal2-footer",
+              popup: "swal-popup",
+            },
+          });
           console.error(err);
         });
     },
@@ -286,6 +328,23 @@ export default {
   color: #002855;
 }
 
+.my-title-class {
+  color: #002855;
+  font-weight: bold;
+  /* Add your custom styles */
+}
+
+.my-content-class {
+  color: #002855;
+  /* Add your custom styles */
+}
+
+.my-confirm-button-class {
+  background-color: #002855;
+  color: white;
+  /* Add your custom styles */
+}
+
 /* Media Queries */
 @media (min-width: 1200px) {
   #left {
@@ -296,5 +355,256 @@ export default {
     flex: 6;
   }
 }
-/*************************************login section ends here********************************/
+
+@media (max-width: 820px) {
+  header .icons #menu-bars {
+    display: inline-block;
+  }
+
+  header .navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #fff;
+    border-top: 0.1rem solid rgba(0, 0, 0, 0.2);
+    border-bottom: 0.1rem solid rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+
+  header .navbar.active {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  }
+
+  header .navbar a {
+    display: block;
+    padding: 0.75rem;
+    margin: 0.5rem;
+    font-size: 1rem;
+    background: #eee;
+  }
+
+  header .icons a {
+    font-size: 1.2rem;
+    padding: 0.5rem 1.1rem;
+    border-radius: 3rem;
+  }
+
+  .home .home-slider .slide .content h3 {
+    font-size: 5rem;
+  }
+
+  .hero .hero-info h1 {
+    font-size: 2rem;
+  }
+  .stats {
+    padding: 2.5rem 10%;
+  }
+  .stats > div h1 {
+    font-size: 1.4rem;
+  }
+
+  .rental_banner {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 2rem;
+  }
+
+  .rental_banner .rental_banner_img,
+  .rental_banner .rental_banner_info {
+    width: 100%;
+    padding: 1rem 5%;
+  }
+
+  .rental_banner .rental_banner_info h1 {
+    padding: 0.75rem 0rem;
+    font-size: 1.75rem;
+  }
+
+  .rental_banner_info p {
+    font-size: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .service {
+    padding: 2.5rem;
+    line-height: 2rem;
+  }
+
+  .service .service_info h1 {
+    font-size: 1.75rem;
+  }
+
+  .service .service_img {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    line-height: 4rem;
+    padding-top: 2rem;
+  }
+  .footer_main .footer_info {
+    padding-left: 1rem;
+  }
+  footer .footer_secondary {
+    padding-top: 1rem;
+  }
+  .footer_newsletter {
+    margin-top: 1rem;
+    width: 80%;
+  }
+  .card {
+    grid-template-columns: 1fr 1fr;
+  }
+  .main_contact {
+    grid-template-columns: 1fr !important;
+  }
+  .contact .service .service_img {
+    line-height: 2.5rem;
+  }
+  .contact .service .service_img img {
+    height: 75px;
+    width: 75px;
+  }
+  .contact .service .service_img p {
+    margin-bottom: 1rem;
+  }
+  .signup {
+    display: grid;
+    grid-template-columns: 1fr !important;
+  }
+  .signup_image {
+    display: none !important;
+  }
+  .signup_form form {
+    width: 65% !important;
+    justify-content: center;
+  }
+  .goals_info {
+    grid-template-columns: 1fr !important;
+  }
+  .goals_info .goal_img {
+    display: none;
+  }
+}
+
+@media (max-width: 400px) {
+  header .logo {
+    font-size: 1.5rem;
+  }
+
+  header .icons a {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .hero-info h1 {
+    font-size: 2rem;
+  }
+
+  .hero .hero-info form .search {
+    padding: 0.75rem 1rem;
+  }
+
+  .hero .hero-info form .btn {
+    padding: 0.75rem 1rem;
+  }
+
+  .hero .hero-info form .btn:hover {
+    box-shadow: inset 30rem 0 0 0 black;
+    color: white;
+  }
+
+  .stats {
+    padding: 1rem 10%;
+  }
+
+  .stats > div h1 {
+    font-size: 1.5rem;
+  }
+
+  .rental_banner .rental_banner_info h1 {
+    font-size: 1.5rem;
+    padding: 0.5rem 0rem;
+  }
+
+  .rental_banner_info p {
+    font-size: 0.75rem;
+    padding-bottom: 1rem;
+  }
+
+  .service .service_img {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .service {
+    padding: 2.5rem;
+    line-height: initial;
+  }
+  .footer_main .footer_newsletter label input {
+    width: 50%;
+  }
+  footer .footer_main {
+    padding: 3rem 0.5rem !important;
+  }
+  .card {
+    grid-template-columns: 1fr;
+  }
+  .contact .service .service_img {
+    line-height: 2rem;
+  }
+  .contact .service .service_img img {
+    height: 50px;
+    width: 50px;
+  }
+  .contact .service .service_img p {
+    margin-bottom: 1rem;
+  }
+  .main_contact .map iframe {
+    height: 400px;
+  }
+  .signup_form form {
+    width: 80% !important;
+    justify-content: center;
+  }
+  #signin,
+  .or,
+  .links {
+    width: 90% !important;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    overflow: auto;
+  }
+
+  #right {
+    display: none;
+  }
+
+  #left {
+    justify-content: start;
+    margin-top: 4vh;
+  }
+
+  #signin .logo {
+    margin-bottom: 2vh;
+  }
+
+  #signin .text-input {
+    margin-bottom: 0.7rem;
+  }
+
+  #main-footer {
+    padding-top: 1rem;
+  }
+  .signup_image h1 {
+    padding: 2rem;
+    color: white;
+  }
+  .member_info {
+    grid-template-columns: 1fr !important;
+  }
+}
 </style>

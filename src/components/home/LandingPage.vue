@@ -43,6 +43,7 @@ export default {
           text: "swal2-textarea",
           confirmButtonText: "swal2-confirm",
           footer: "swal2-footer",
+          popup: "swal-popup",
         },
       });
     },

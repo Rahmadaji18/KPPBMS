@@ -7,8 +7,9 @@ import PhotoView from "../views/PhotoView.vue";
 import VideoView from "../views/VideoView.vue";
 import DesignView from "../views/DesignView.vue";
 import WebView from "../views/WebView.vue";
-// import DashboardView from "../views/DashboardView.vue";
+import DashboardView from "../views/DashboardView.vue";
 import NotfoundView from "../views/NotfoundView.vue";
+import ScheduleView from "../views/ScheduleView.vue";
 
 const routes = [
   {
@@ -40,6 +41,11 @@ const routes = [
     component: AboutView,
   },
   {
+    path: "/schedule",
+    name: "schedule",
+    component: ScheduleView,
+  },
+  {
     path: "/photography",
     name: "photography",
     component: PhotoView,
@@ -59,17 +65,49 @@ const routes = [
     name: "webdevelopment",
     component: WebView,
   },
-  // {
-  //   path: "/dashboard",
-  //   name: "dashboard",
-  //   component: DashboardView,
-  // },
   {
-    path: "/error404",
-    name: "error404",
+    path: "/dashboard",
+    name: "dashboard",
+    component: DashboardView,
+    beforeEnter: checkLoggedIn,
+    meta: { requiresAuth: true },
+  },
+  {
+    path: "/logout",
+    name: "logout",
+    beforeEnter: (to, from, next) => {
+      // Clear the logged-in status from localStorage
+      localStorage.removeItem("loggedIn");
+      next("/");
+    },
+  },
+  {
+    path: "/404pagenotfound",
+    name: "404pagenotfound",
     component: NotfoundView,
+    beforeEnter: (to, from, next) => {
+      // Check if the user is already logged in
+      if (localStorage.getItem("loggedIn")) {
+        // User is already logged in, redirect to the dashboard
+        next("/dashboard");
+      } else {
+        // User is not logged in, proceed to the login page
+        next();
+      }
+    },
   },
 ];
+
+function checkLoggedIn(to, from, next) {
+  // Check if the user is logged in
+  if (localStorage.getItem("loggedIn")) {
+    // User is logged in, proceed to the next route
+    next();
+  } else {
+    // User is not logged in, redirect to the login page
+    next("/404pagenotfound");
+  }
+}
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),

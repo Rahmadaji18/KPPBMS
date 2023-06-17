@@ -23,7 +23,7 @@
           Jika kamu tertarik dengan layanan <br />
           branding kami, segera jadwalkan untuk berdiskusi bersama secara gratis.
         </p>
-        <button class="btn" @click="showAlert">Schedule Now</button>
+        <a href="#"><button class="btn">Schedule Now</button></a>
       </div>
     </div>
     <div class="footer_secondary">
@@ -53,7 +53,6 @@ export default {
           text: "swal2-textarea",
           confirmButtonText: "swal2-confirm",
           footer: "swal2-footer",
-          popup: "swal-popup",
         },
       });
     },
@@ -171,18 +170,18 @@ export default {
 }
 
 /* .footer_schedule .btn{
-    outline: none;
-    border: none;
-    border-radius: 10px;
-    background: #002e5f;
-    cursor: pointer;
-    height: 50px;
-    width: 240px;
-    box-shadow: 0 .2rem .5rem rgba(0,0,0,.3);
-    transition: transform 0.3s;
-    color: #ffffff;
-    font-size: 24px;
-} */
+      outline: none;
+      border: none;
+      border-radius: 10px;
+      background: #002e5f;
+      cursor: pointer;
+      height: 50px;
+      width: 240px;
+      box-shadow: 0 .2rem .5rem rgba(0,0,0,.3);
+      transition: transform 0.3s;
+      color: #ffffff;
+      font-size: 24px;
+  } */
 
 .btn {
   border: none;

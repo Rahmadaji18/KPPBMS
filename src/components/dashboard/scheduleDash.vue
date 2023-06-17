@@ -10,31 +10,9 @@
 </template>
 
 <script>
-import Swal from "sweetalert2/dist/sweetalert2.js";
-import "sweetalert2/src/sweetalert2.scss";
-
 export default {
   name: "scheduleNow",
   props: {},
-  methods: {
-    showAlert() {
-      // Use sweetalert2
-      Swal.fire({
-        icon: "error",
-        title: "Kamu Harus Login/Signup",
-        text: "Menu ini hanya bisa digunakan jika kamu sudah melakukan login/signup",
-        footer: '<a href="login">Login Sekarang</a>',
-        confirmButtonText: "Okey",
-        customClass: {
-          title: "swal2-title",
-          text: "swal2-textarea",
-          confirmButtonText: "swal2-confirm",
-          footer: "swal2-footer",
-          popup: "swal-popup",
-        },
-      });
-    },
-  },
 };
 </script>
 

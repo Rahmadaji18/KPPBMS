@@ -1,25 +1,25 @@
 <template>
   <header>
     <div class="logo">
-      <a href="/"><img :src="logo" alt="Logo" /></a>
+      <a href="/dashboard"><img :src="logo" alt="Logo" /></a>
     </div>
     <nav>
       <li><a href="about">About</a></li>
       <li><DropdownComp class="dropdown" title="Service" :items="services" /></li>
-      <li @click="showAlert"><a>Schedule</a></li>
-      <router-link to="/login" class="btn">Login</router-link>
+      <li><a href="schedule">Schedule</a></li>
+      <li class="btn" @click="logout">Logout</li>
     </nav>
   </header>
 </template>
 
 <script>
 import logo from "@/assets/images/logo.png";
-import DropdownComp from "./DropdownComp.vue";
+import DropdownComp from "@/components/home/DropdownComp.vue";
 import Swal from "sweetalert2/dist/sweetalert2.js";
 import "sweetalert2/src/sweetalert2.scss";
 
 export default {
-  name: "NavComp",
+  name: "NavDash",
   props: {},
   data() {
     return {
@@ -59,9 +59,13 @@ export default {
           text: "swal2-textarea",
           confirmButtonText: "swal2-confirm",
           footer: "swal2-footer",
-          popup: "swal-popup",
         },
       });
+    },
+    logout() {
+      // Clear the logged-in status from localStorage
+      localStorage.removeItem("loggedIn");
+      this.$router.push("/logout");
     },
   },
 };
@@ -150,10 +154,6 @@ nav li a:hover::after {
 </style>
 
 <style>
-.swal-popup {
-  border-radius: 50px;
-}
-
 .swal2-title {
   color: #002855;
 }
