@@ -4,52 +4,56 @@
     <div class="first">
       <div class="kata">
         <div class="judul">
-          <h1>Hello, Iki Adfi</h1>
+          <h1 class="hello">Hello, "{{ username }}"</h1>
           <h2 class="kuning">Welcome Back To</h2>
           <h2 class="kuning">Ini Karya Kita</h2>
         </div>
-        <p>Temukan penawaran layanan branding terbaikmu<br />dalam 1 platform dengan sistem <i>One Door Branding Services.</i></p>
-        <a href="#"><button class="btnl">Schedule</button></a>
+        <p>Temukan penawaran layanan branding terbaikmu dalam 1 platform dengan sistem <i>One Door Branding Services.</i></p>
+        <a href="/dashboard/schedule"><button class="btnl">Schedule</button></a>
       </div>
       <img :src="gambar" />
     </div>
   </div>
-  <AboutUs />
-  <OurService />
+  <DashAbout />
+  <ServiceDash />
   <trackRecord> </trackRecord>
   <CarouselComp />
-  <scheduleNow> </scheduleNow>
+  <scheduleDash> </scheduleDash>
   <FAQComp />
-  <footerCom></footerCom>
+  <footerDash></footerDash>
 </template>
 
 <script>
-import AboutUs from "@/components/home/homeAboutUs.vue";
-import OurService from "@/components/home/homeOurService.vue";
+import DashAbout from "@/components/dashboard/DashAbout.vue";
+import ServiceDash from "@/components/dashboard/ServiceDash.vue";
 import FAQComp from "@/components/home/FAQComp.vue";
 import CarouselComp from "@/components/home/CarouselComp.vue";
 import trackRecord from "@/components/home/trackRecord.vue";
-import scheduleNow from "@/components/home/scheduleNow.vue";
-import footerCom from "@/components/home/footerCom.vue";
+import scheduleDash from "@/components/dashboard/scheduleDash.vue";
+import footerDash from "@/components/dashboard/footerDash.vue";
 import gambar from "@/assets/images/Marketing.png";
 import NavDash from "@/components/dashboard/NavDash.vue";
 
 export default {
   name: "DashboardView",
   components: {
-    AboutUs,
-    OurService,
+    DashAbout,
+    ServiceDash,
     trackRecord,
     CarouselComp,
-    scheduleNow,
+    scheduleDash,
     FAQComp,
-    footerCom,
+    footerDash,
     NavDash,
   },
   data() {
     return {
       gambar: gambar,
+      username: "",
     };
+  },
+  mounted() {
+    this.username = localStorage.getItem("username");
   },
 };
 </script>
@@ -78,7 +82,7 @@ export default {
 /* Apply negative margins to the components */
 NavDash,
 LandDash,
-AboutUs {
+DashAbout {
   margin-top: -20px;
 }
 
@@ -100,6 +104,12 @@ AboutUs {
   align-items: center;
   justify-items: space-between;
   gap: 50px;
+
+  @media (max-width: 1000px) {
+    flex-direction: column-reverse;
+    gap: 0;
+    width: 100%;
+  }
 }
 
 .kata {
@@ -107,6 +117,18 @@ AboutUs {
   flex-direction: column;
   gap: 20px;
   width: 50%;
+
+  @media (max-width: 700px) {
+    width: 60%;
+  }
+
+  @media (max-width: 600px) {
+    width: 70%;
+  }
+
+  @media (max-width: 600px) {
+    width: 80%;
+  }
 }
 
 .kata p,
@@ -115,6 +137,21 @@ i {
   color: var(--putih);
   text-align: left;
   font-family: "Poppins", sans-serif;
+
+  @media (max-width: 1270px) {
+    font-size: 15px;
+  }
+
+  @media (max-width: 1080px) {
+    font-size: 12px;
+  }
+
+  @media (max-width: 1000px) {
+    font-size: 12px;
+  }
+  @media (max-width: 360px) {
+    font-size: 12px;
+  }
 }
 
 .judul {
@@ -130,6 +167,18 @@ i {
   font-family: "Montserrat", sans-serif;
   font-weight: 800;
   margin-bottom: 10px;
+
+  @media (max-width: 1270px) {
+    font-size: 40px;
+  }
+
+  @media (max-width: 600px) {
+    font-size: 30px;
+  }
+
+  @media (max-width: 360px) {
+    font-size: 25px;
+  }
 }
 
 .judul h2 {
@@ -138,15 +187,39 @@ i {
   font-family: "Montserrat", sans-serif;
   font-weight: 800;
   margin-bottom: -10px;
+
+  @media (max-width: 1270px) {
+    font-size: 50px;
+  }
+
+  @media (max-width: 600px) {
+    font-size: 40px;
+  }
+
+  @media (max-width: 360px) {
+    font-size: 35px;
+  }
 }
 
 .judul .kuning {
   color: var(--kuning);
+
+  @media (max-width: 414px) {
+    font-size: 33px;
+    margin-top: 4px;
+  }
 }
 
 img {
   width: 640px;
   height: auto;
+
+  @media (max-width: 600px) {
+    margin-top: 0.5rem;
+    left: 0;
+    width: 320px;
+    height: auto;
+  }
 }
 
 .btnl {
@@ -162,6 +235,11 @@ img {
   margin-top: 20px;
   cursor: pointer;
   transition: ease-out 0.3s;
+
+  @media (max-width: 1080px) {
+    margin-top: 5px;
+    font-size: 18px;
+  }
 }
 
 .btnl:hover {

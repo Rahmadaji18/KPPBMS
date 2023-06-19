@@ -31,22 +31,6 @@ export default {
   box-sizing: border-box;
   font-family: Poppins, Montserrat, sans-serif;
   scroll-behavior: smooth !important;
-}
-
-/* Apply negative margins to the components */
-Header,
-Landing,
-About {
-  margin-top: -20px;
+  max-width: 100vw;
 }
 </style>
-
-<!-- <style lang="scss">
-#app {
-  font-family: Poppins, Montserrat, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-</style> -->

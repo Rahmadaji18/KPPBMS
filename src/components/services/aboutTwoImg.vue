@@ -8,7 +8,7 @@
       <div class="kata">
         <h1>{{ judul }}</h1>
         <p>{{ desc }}</p>
-        <a href="https://api.whatsapp.com/send/?phone=6282140759677&text&type=phone_number&app_absent=0" target="_blank" class="btn">{{ harga }}</a>
+        <a @click="showAlert" class="btn">{{ harga }}</a>
       </div>
     </div>
   </div>
@@ -17,6 +17,8 @@
 <script>
 import srv2 from "@/assets/images/srv2.png";
 import srv3 from "@/assets/images/srv3.png";
+import Swal from "sweetalert2/dist/sweetalert2.js";
+import "sweetalert2/src/sweetalert2.scss";
 
 export default {
   name: "aboutTwoImg",
@@ -42,57 +44,142 @@ export default {
       default: srv3,
     },
   },
+  methods: {
+    showAlert() {
+      // Use sweetalert2
+      Swal.fire({
+        icon: "error",
+        title: "Kamu Harus Login/Signup",
+        text: "Menu ini hanya bisa digunakan jika kamu sudah melakukan login/signup",
+        footer: '<a href="login">Login Sekarang</a>',
+        confirmButtonText: "Okey",
+        customClass: {
+          title: "swal2-title",
+          text: "swal2-textarea",
+          confirmButtonText: "swal2-confirm",
+          footer: "swal2-footer",
+          popup: "swal-popup",
+        },
+      });
+    },
+  },
 };
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .bgl {
   display: flex;
   justify-content: center;
   align-content: center;
   width: 100%;
-  height: 850px;
+  padding: 100px 0;
 }
 
 .bg {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 1160px;
-  gap: 100px;
+  max-width: 1200px;
+  width: 80%;
+  gap: 40px;
+
+  @media (max-width: 1000px) {
+    flex-direction: column;
+    width: 100%;
+    gap: 80px;
+  }
+}
+
+img {
+  border-radius: 30px;
+  width: 450px;
+  transition: 0.3s;
+
+  @media (max-width: 1270px) {
+    width: 400px;
+  }
+
+  @media (max-width: 1140px) {
+    width: 350px;
+  }
+
+  @media (max-width: 1080px) {
+    font-size: 38px;
+  }
+
+  @media (max-width: 1000px) {
+    font-size: 38px;
+  }
+}
+
+img:hover {
+  transform: scale(0.9);
 }
 
 .photo {
   display: flex;
   flex-direction: column;
-  gap: 5px;
-}
-
-.photo img {
-  box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.3);
-  border-radius: 30px;
-  transition: 0.3s;
-}
-
-.photo img:hover {
-  transform: scale(0.9);
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
 }
 
 .kata {
   display: flex;
   flex-direction: column;
-  gap: 20px;
   margin-top: -20px;
+  gap: 30px;
+  width: 50%;
+
+  @media (max-width: 700px) {
+    width: 60%;
+  }
+
+  @media (max-width: 600px) {
+    width: 70%;
+  }
+
+  @media (max-width: 600px) {
+    width: 80%;
+  }
 }
 
 .kata h1 {
   font-family: "montserrat", sans-serif;
   font-size: 48px;
   color: var(--biru);
+
+  @media (max-width: 1270px) {
+    font-size: 38px;
+  }
+
+  @media (max-width: 1140px) {
+    font-size: 28px;
+  }
+
+  @media (max-width: 1080px) {
+    font-size: 38px;
+  }
+
+  @media (max-width: 1000px) {
+    font-size: 38px;
+  }
 }
 
 .kata p {
   font-size: 24px;
+
+  @media (max-width: 1270px) {
+    font-size: 20px;
+  }
+
+  @media (max-width: 1080px) {
+    font-size: 18px;
+  }
+
+  @media (max-width: 1000px) {
+    font-size: 20px;
+  }
 }
 
 .btn {

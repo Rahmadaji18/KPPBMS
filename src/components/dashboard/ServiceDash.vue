@@ -22,16 +22,16 @@ import graphic from "@/assets/images/Graphic.png";
 import web from "@/assets/images/Web.png";
 
 export default {
-  name: "OurService",
+  name: "ServiceDash",
   props: {},
 
   data() {
     return {
       service: [
-        { judul: "Photography", desc: "Pembuatan foto komersial untuk keperluan produk atau jasa dengan berbagai paket menarik dan harga terjangkau", link: "/photography", img: photo },
-        { judul: "Videography", desc: "Video komersil untuk keperluan promosi produk, jasa, event, instansi, dan sebagainya. Pilih sesuai kebutuhanmu", link: "/videography", img: video },
-        { judul: "Graphics Design", desc: "Pembuatan desain visual untuk mendukung brandingmu. Dari logo, packaging, stationery, hingga feed social media", link: "/graphicsdesign", img: graphic },
-        { judul: "Web Development", desc: "Buat website mu dari awal atau remake dengan teknologi dan desain kekinian. Temukan kebutuhan websitemu di sini", link: "/webdevelopment", img: web },
+        { judul: "Photography", desc: "Pembuatan foto komersial untuk keperluan produk atau jasa dengan berbagai paket menarik dan harga terjangkau", link: "/dashboard/photography", img: photo },
+        { judul: "Videography", desc: "Video komersil untuk keperluan promosi produk, jasa, event, instansi, dan sebagainya. Pilih sesuai kebutuhanmu", link: "/dashboard/videography", img: video },
+        { judul: "Graphics Design", desc: "Pembuatan desain visual untuk mendukung brandingmu. Dari logo, packaging, stationery, hingga feed social media", link: "/dashboard/graphicsdesign", img: graphic },
+        { judul: "Web Development", desc: "Buat website mu dari awal atau remake dengan teknologi dan desain kekinian. Temukan kebutuhan websitemu di sini", link: "/dashboard/webdevelopment", img: web },
       ],
     };
   },
@@ -171,8 +171,8 @@ export default {
   }
 
   /* .bg2 > p {
-    width: 500px;
-  } */
+      width: 500px;
+    } */
 
   .cardServe {
     max-width: 250px;

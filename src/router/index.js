@@ -10,6 +10,12 @@ import WebView from "../views/WebView.vue";
 import DashboardView from "../views/DashboardView.vue";
 import NotfoundView from "../views/NotfoundView.vue";
 import ScheduleView from "../views/ScheduleView.vue";
+import AboutDash from "../views/AboutDash.vue";
+import PhotoDash from "../views/PhotoDash.vue";
+import VideoDash from "../views/VideoDash.vue";
+import DesignDash from "../views/DesignDash.vue";
+import WebDash from "../views/WebDash.vue";
+import ForgotPass from "../views/ForgotPass.vue";
 
 const routes = [
   {
@@ -17,18 +23,15 @@ const routes = [
     name: "home",
     component: HomeView,
   },
-  // {
-  //   path: "/about",
-  //   name: "about",
-  //   // route level code-splitting
-  //   // this generates a separate chunk (about.[hash].js) for this route
-  //   // which is lazy-loaded when the route is visited.
-  //   component: () => import(/* webpackChunkName: "about" */ "../views/AboutView.vue"),
-  // },
   {
     path: "/login",
     name: "login",
     component: LoginView,
+  },
+  {
+    path: "/forgotpassword",
+    name: "forgotpassword",
+    component: ForgotPass,
   },
   {
     path: "/signup",
@@ -41,8 +44,8 @@ const routes = [
     component: AboutView,
   },
   {
-    path: "/schedule",
-    name: "schedule",
+    path: "/dashboard/schedule",
+    name: "/dashboard/schedule",
     component: ScheduleView,
   },
   {
@@ -71,6 +74,31 @@ const routes = [
     component: DashboardView,
     beforeEnter: checkLoggedIn,
     meta: { requiresAuth: true },
+  },
+  {
+    path: "/dashboard/about",
+    name: "/dashboard/about",
+    component: AboutDash,
+  },
+  {
+    path: "/dashboard/photography",
+    name: "/dashboard/photography",
+    component: PhotoDash,
+  },
+  {
+    path: "/dashboard/videography",
+    name: "/dashboard/videography",
+    component: VideoDash,
+  },
+  {
+    path: "/dashboard/graphicsdesign",
+    name: "/dashboard/graphicsdesign",
+    component: DesignDash,
+  },
+  {
+    path: "/dashboard/webdevelopment",
+    name: "/dashboard/webdevelopment",
+    component: WebDash,
   },
   {
     path: "/logout",

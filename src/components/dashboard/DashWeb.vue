@@ -5,7 +5,7 @@
       <div class="kata">
         <h1>{{ judul }}</h1>
         <p>{{ desc }}</p>
-        <a @click="showAlert" class="btn">{{ harga }}</a>
+        <a href="/dashboard/schedule" class="btn">{{ harga }}</a>
       </div>
     </div>
   </div>
@@ -17,6 +17,7 @@ import Swal from "sweetalert2/dist/sweetalert2.js";
 import "sweetalert2/src/sweetalert2.scss";
 
 export default {
+  name: "DashWeb",
   props: {
     judul: {
       type: String,

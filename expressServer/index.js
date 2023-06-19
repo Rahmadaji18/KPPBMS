@@ -85,39 +85,117 @@ app.post("/signup", (req, res) => {
   const email = req.body.email;
 
   if (username && password && confirm_password && email) {
-    connection.query("SELECT * FROM login WHERE username = ?", [username], function (err, data) {
+    if (password !== confirm_password) {
+      res.send({ msg: "Password Salah" });
+    } else {
+      connection.query("SELECT * FROM login WHERE username = ?", [username], function (err, data) {
+        if (err) {
+          console.log(err);
+          res.status(500).send("Internal Server Error");
+          return;
+        }
+
+        if (data.length > 0) {
+          console.log("Username Sudah Terdaftar!");
+          res.send({ msg: "Username Sudah Terdaftar!" });
+        } else {
+          connection.query("SELECT * FROM login WHERE email = ?", [email], function (err, data) {
+            if (err) {
+              console.log(err);
+              res.status(500).send("Internal Server Error");
+              return;
+            }
+
+            if (data.length > 0) {
+              console.log("Email Sudah Terdaftar!");
+              res.send({ msg: "Email Sudah Terdaftar!" });
+            } else {
+              connection.query("INSERT INTO login (email, username, password, confirm_password) VALUES (?, ?, ?, ?)", [email, username, password, confirm_password, "0", "0", "0", "0"], (err) => {
+                if (err) {
+                  console.log(err);
+                  res.status(500).send("Internal Server Error");
+                  return;
+                }
+
+                console.log("Signup Berhasil!");
+                res.send({ msg: "Signup Berhasil!" });
+              });
+            }
+          });
+        }
+      });
+    }
+  } else {
+    console.log("Masukkan Data Terlebih Dahulu!");
+    res.send({ msg: "Masukkan Data Terlebih Dahulu!" });
+  }
+});
+
+app.post("/dashboard/schedule", (req, res) => {
+  const nama = req.body.nama;
+  const phone = req.body.phone;
+  const email = req.body.email;
+  const company = req.body.company;
+  const subjek = req.body.subjek;
+  const message = req.body.message;
+
+  if (nama && phone && email && company && subjek && message) {
+    connection.query("SELECT * FROM login WHERE email = ?", [email], function (err, data) {
       if (err) {
         console.log(err);
         res.status(500).send("Internal Server Error");
         return;
       }
 
-      if (data.length > 0) {
-        console.log("Username Sudah Terdaftar!");
-        res.send({ msg: "Username Sudah Terdaftar!" });
+      if (data.length === 0) {
+        console.log("Email Belum Terdaftar!");
+        res.send({ msg: "Email Belum Terdaftar!" });
       } else {
-        connection.query("SELECT * FROM login WHERE email = ?", [email], function (err, data) {
+        connection.query("INSERT INTO schedule (nama, phone, email, company, subjek, message) VALUES (?, ?, ?, ?, ?, ?)", [nama, phone, email, company, subjek, message], (err) => {
           if (err) {
             console.log(err);
             res.status(500).send("Internal Server Error");
             return;
           }
+          console.log("Respon Terkirim!");
+          res.send({ msg: "Respon Terkirim!" });
+        });
+      }
+    });
+  } else {
+    console.log("Masukkan Data Terlebih Dahulu!");
+    res.send({ msg: "Masukkan Data Terlebih Dahulu!" });
+  }
+});
 
-          if (data.length > 0) {
-            console.log("Email Sudah Terdaftar!");
-            res.send({ msg: "Email Sudah Terdaftar!" });
-          } else {
-            connection.query("INSERT INTO login (email, username, password, confirm_password) VALUES (?, ?, ?, ?)", [email, username, password, confirm_password, "0", "0", "0", "0"], (err) => {
-              if (err) {
-                console.log(err);
-                res.status(500).send("Internal Server Error");
-                return;
-              }
+app.post("/dashboard/schedule", (req, res) => {
+  const nama = req.body.nama;
+  const phone = req.body.phone;
+  const email = req.body.email;
+  const company = req.body.company;
+  const subjek = req.body.subjek;
+  const message = req.body.message;
 
-              console.log("Signup Berhasil!");
-              res.send({ msg: "Signup Berhasil!" });
-            });
+  if (nama && phone && email && company && subjek && message) {
+    connection.query("SELECT * FROM login WHERE email = ?", [email], function (err, data) {
+      if (err) {
+        console.log(err);
+        res.status(500).send("Internal Server Error");
+        return;
+      }
+
+      if (data.length === 0) {
+        console.log("Email Belum Terdaftar!");
+        res.send({ msg: "Email Belum Terdaftar!" });
+      } else {
+        connection.query("INSERT INTO schedule (nama, phone, email, company, subjek, message) VALUES (?, ?, ?, ?, ?, ?)", [nama, phone, email, company, subjek, message], (err) => {
+          if (err) {
+            console.log(err);
+            res.status(500).send("Internal Server Error");
+            return;
           }
+          console.log("Respon Terkirim!");
+          res.send({ msg: "Respon Terkirim!" });
         });
       }
     });

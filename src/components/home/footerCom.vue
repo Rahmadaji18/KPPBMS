@@ -23,7 +23,7 @@
           Jika kamu tertarik dengan layanan <br />
           branding kami, segera jadwalkan untuk berdiskusi bersama secara gratis.
         </p>
-        <button class="btn" @click="showAlert">Schedule Now</button>
+        <a> <button class="btn" @click="showAlert">Schedule Now</button></a>
       </div>
     </div>
     <div class="footer_secondary">
@@ -99,7 +99,7 @@ export default {
 
 .footer_main .footer_info p {
   font-size: 0.9rem;
-
+  margin-top: -10px;
   color: #002e5f;
 }
 .footer_main .footer_info a,
@@ -124,6 +124,7 @@ export default {
   justify-content: space-between;
   text-align: left;
   align-self: center;
+  margin-top: -10px;
 }
 .footer_link .link_column > div {
   display: grid;
@@ -131,7 +132,7 @@ export default {
 }
 
 .footer_secondary {
-  padding: 24px auto;
+  padding-inline: 24px;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
@@ -167,6 +168,7 @@ export default {
 
 .footer_schedule p {
   text-align: left;
+  margin-top: -10px;
   /* align-self: center; */
 }
 
@@ -199,5 +201,63 @@ export default {
 }
 .footer_schedule .btn:hover {
   transform: scale(0.9);
+}
+@media (max-width: 900px) {
+  .footer .footer_main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    /* padding: 2rem 0.5rem; */
+  }
+
+  .btn {
+    font-size: 16px;
+  }
+
+  .footer h2 {
+    font-size: 28px;
+    text-align: left;
+  }
+  .footer_main .footer_info {
+    padding-left: 0;
+  }
+
+  .footer .footer_secondary {
+    padding-top: 0;
+  }
+  .footer_secondary p {
+    font-size: 12px;
+    text-align: center;
+    color: #002e5f;
+  }
+}
+@media (max-width: 480px) {
+  .footer .footer_main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    /* padding: 2rem 0.5rem; */
+  }
+
+  .footer_main .footer_info {
+    padding-left: 0;
+  }
+
+  .btn {
+    font-size: 16px;
+  }
+
+  .footer h2 {
+    font-size: 28px;
+    text-align: left;
+  }
 }
 </style>

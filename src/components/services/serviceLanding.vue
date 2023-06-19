@@ -1,10 +1,12 @@
 <template>
-  <div class="bg">
-    <div class="judul">
-      <h1 class="satu">{{ title1 }}</h1>
-      <h1>{{ title2 }}</h1>
+  <div class="bg2">
+    <div class="bg">
+      <div class="judul">
+        <h1 class="satu">{{ title1 }}</h1>
+        <h1>{{ title2 }}</h1>
+      </div>
+      <p>{{ description }}</p>
     </div>
-    <p>{{ description }}</p>
   </div>
 </template>
 
@@ -28,9 +30,8 @@ export default {
 };
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .bg {
-  background-color: var(--biru);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -40,12 +41,31 @@ export default {
   gap: 20px;
   padding-top: 10rem;
   padding-bottom: 8rem;
+  width: 80%;
+  max-width: 1200px;
+}
+
+.bg2{
+  display: flex;
+  justify-content: center;
+  background-color: var(--biru);
 }
 
 .bg p {
   text-align: center;
   font-size: 20px;
-  width: 1000px;
+
+  @media(max-width: 1270px){
+    font-size: 15px;
+  }
+
+  @media(max-width: 1080px){
+    font-size: 12px;
+  }
+
+  @media(max-width: 1000px){
+    font-size: 15px;
+  }
 }
 
 .satu {
@@ -62,5 +82,22 @@ export default {
 .judul h1 {
   font-family: "Montserrat", sans-serif;
   font-size: 80px;
+  text-align: center;
+
+  @media(max-width: 1270px){
+    font-size: 60px;
+  }
+
+  @media(max-width: 1140px){
+    font-size: 50px;
+  }
+
+  @media(max-width: 1080px){
+    font-size: 45px;
+  }
+  
+  @media(max-width: 1000px){
+    font-size: 50px;
+  }
 }
 </style>

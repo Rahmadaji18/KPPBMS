@@ -12,10 +12,10 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
 /* import specific icons */
-import { faUserSecret, faHouse } from "@fortawesome/free-solid-svg-icons";
+import { faUserSecret, faHouse, faBars } from "@fortawesome/free-solid-svg-icons";
 import { faFacebook, faInstagram, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 /* add icons to the library */
-library.add(faUserSecret, faHouse, faFacebook, faInstagram, faLinkedin);
+library.add(faUserSecret, faHouse, faFacebook, faInstagram, faLinkedin, faBars);
 
 createApp(App).use(store).use(router).use(VueSweetalert2).component("font-awesome-icon", FontAwesomeIcon, "vue3-autocounter", Vue3Autocounter).mount("#app");

@@ -8,7 +8,7 @@
           Ini Karya Kita merupakan platform layanan branding satu pintu yang menyediakan berbagai macam jasa untuk mengembangkan branding desa wisata, event, instansi, UMKM dan sebagainya. Kamu juga bisa berdiskusi dan berkonsultasi terkait
           metode brandingmu bersama kami secara gratis.
         </p>
-        <a href="about"><button class="btna">View More</button></a>
+        <a href="/dashboard/about"><button class="btna">View More</button></a>
       </div>
     </div>
   </div>
@@ -18,7 +18,7 @@
 import gambar from "@/assets/images/About.png";
 
 export default {
-  name: "AboutUs",
+  name: "DashABout",
   props: {},
 
   data() {

@@ -1,22 +1,27 @@
 <template>
   <div class="bgl">
     <div class="bg">
-      <a href=""><img :src="photo" /></a>
+      <div class="photo">
+        <a href="https://youtu.be/dTHGLBAiUZA" target="_blank"><img :src="photo1" /></a>
+        <a href="https://youtu.be/1xEMRCuUbCo" target="_blank"><img :src="photo2" /></a>
+      </div>
       <div class="kata">
         <h1>{{ judul }}</h1>
         <p>{{ desc }}</p>
-        <a @click="showAlert" class="btn">{{ harga }}</a>
+        <a href="/dashboard/schedule" class="btn">{{ harga }}</a>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import web from "@/assets/images/website.png";
+import srv2 from "@/assets/images/srv2.png";
+import srv3 from "@/assets/images/srv3.png";
 import Swal from "sweetalert2/dist/sweetalert2.js";
 import "sweetalert2/src/sweetalert2.scss";
 
 export default {
+  name: "DashVideo",
   props: {
     judul: {
       type: String,
@@ -30,9 +35,13 @@ export default {
       type: String,
       default: "desc",
     },
-    photo: {
+    photo1: {
       type: String,
-      default: web,
+      default: srv2,
+    },
+    photo2: {
+      type: String,
+      default: srv3,
     },
   },
   methods: {
@@ -72,17 +81,18 @@ export default {
   align-items: center;
   max-width: 1200px;
   width: 80%;
-  gap: 100px;
+  gap: 40px;
 
   @media (max-width: 1000px) {
     flex-direction: column;
     width: 100%;
+    gap: 80px;
   }
 }
 
 img {
   border-radius: 30px;
-  width: 400px;
+  width: 450px;
   transition: 0.3s;
 
   @media (max-width: 1270px) {
@@ -104,6 +114,14 @@ img {
 
 img:hover {
   transform: scale(0.9);
+}
+
+.photo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
 }
 
 .kata {

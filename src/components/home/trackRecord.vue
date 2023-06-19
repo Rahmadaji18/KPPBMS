@@ -5,15 +5,15 @@
         <h1>We Are Always Innovate</h1>
       </div>
       <div>
-        <vue3-autocounter class="num" ref="counter" :startAmount="0" :endAmount="1080" :duration="15" prefix="" suffix="" separator="" decimalSeparator="" :decimals="0" :autoinit="true" />
+        <vue3-autocounter class="num" ref="counter" :startAmount="0" :endAmount="1080" :duration="5" prefix="" suffix="" separator="" decimalSeparator="" :decimals="0" :autoinit="true" />
         <h2>Days<br />Experience</h2>
       </div>
       <div>
-        <vue3-autocounter class="num" ref="counter" :startAmount="0" :endAmount="348" :duration="15" prefix="" suffix="" separator="" decimalSeparator="" :decimals="0" :autoinit="true" />
+        <vue3-autocounter class="num" ref="counter" :startAmount="0" :endAmount="348" :duration="5" prefix="" suffix="" separator="" decimalSeparator="" :decimals="0" :autoinit="true" />
         <h2>Projects<br />Completed</h2>
       </div>
       <div>
-        <vue3-autocounter class="num" ref="counter" :startAmount="0" :endAmount="328" :duration="15" prefix="" suffix="" separator="" decimalSeparator="" :decimals="0" :autoinit="true" />
+        <vue3-autocounter class="num" ref="counter" :startAmount="0" :endAmount="328" :duration="5" prefix="" suffix="" separator="" decimalSeparator="" :decimals="0" :autoinit="true" />
         <h2>Total<br />Clients</h2>
       </div>
     </div>
@@ -84,15 +84,104 @@ h2 {
   font-size: 50px;
 }
 
-@media (max-width: 1000px) {
-  .counters .container {
-    grid-template-columns: repeat(2, 1fr);
+@media (max-width: 1180px) {
+  .counters .container h1 {
+    font-size: 35px;
   }
 
-  .counters .container > div:nth-of-type(1),
-  .counters .container > div:nth-of-type(2) {
-    border-bottom: 1px lightskyblue solid;
-    padding-bottom: 20px;
+  .counters .num {
+    font-size: 35px;
+    margin: 10px 0;
+  }
+
+  h2 {
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  .counters {
+    background-size: auto;
+  }
+}
+
+@media (max-width: 1000px) {
+  .counters .container {
+    display: grid;
+    grid-template-columns: 300px repeat(3, 1fr);
+    text-align: center;
+  }
+
+  .counters {
+    background-size: cover;
+    background-position: center;
+  }
+  .counters .container h1 {
+    font-size: 35px;
+    text-align: center;
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 900px) {
+  .counters .container {
+    display: grid;
+    grid-template-columns: 200px repeat(3, 1fr);
+    text-align: center;
+  }
+
+  .counters {
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .counters {
+    background-size: cover;
+    background-position: center;
+  }
+  .container {
+    width: fit-content;
+    max-width: 1200px;
+  }
+
+  .counters .container {
+    display: grid;
+    grid-template-columns: 200px;
+    text-align: center;
+    row-gap: 40px;
+  }
+  .counters .container h1 {
+    font-size: 50px;
+  }
+
+  .counters .num {
+    font-size: 45px;
+    margin: 10px 0;
+  }
+
+  h2 {
+    font-size: 30px;
+    font-weight: 500;
+  }
+}
+
+@media (max-width: 480px) {
+  .counters {
+    background-size: cover;
+    background-position: center;
+  }
+
+  .counters .container h1 {
+    font-size: 38px;
+  }
+
+  .counters .container h2 {
+    font-size: 28px;
+  }
+
+  .counters .num {
+    font-size: 28px;
   }
 }
 </style>

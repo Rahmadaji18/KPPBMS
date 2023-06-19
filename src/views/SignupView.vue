@@ -68,6 +68,21 @@ export default {
   },
   methods: {
     async signup() {
+      if (this.password !== this.confirm_password) {
+        Swal.fire({
+          icon: "warning",
+          title: "Konfirmasi Password Gagal",
+          text: "Password Tidak Cocok",
+          customClass: {
+            title: "swal2-title",
+            text: "swal2-textarea",
+            confirmButtonText: "swal2-confirm",
+            footer: "swal2-footer",
+            popup: "swal-popup",
+          },
+        });
+        return;
+      }
       await axios
         .post("http://localhost:8081/signup", {
           email: this.email,
@@ -120,7 +135,7 @@ export default {
             Swal.fire({
               icon: "success",
               title: "Registrasi Berhasil",
-              text: "Kamu Sudah Terdaftar, Silahkan Login untuk Melanjutkan",
+              text: "Selamat! Kamu Sudah Terdaftar, Silahkan Login untuk Melanjutkan",
               customClass: {
                 title: "swal2-title",
                 text: "swal2-textarea",
@@ -202,6 +217,7 @@ export default {
   font-weight: 500;
   float: left;
   color: #002855;
+  padding-bottom: 5px;
 }
 
 .signup_form .text-input {
@@ -251,11 +267,15 @@ export default {
 .signup_form .links,
 .signup_form .or {
   width: 100%;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 .main-footer {
   text-align: center;
   font-size: 0.8rem;
   padding-top: 1rem;
+  margin-bottom: 10px;
 }
 
 .main-footer a {
@@ -557,8 +577,9 @@ export default {
     margin-bottom: 0.7rem;
   }
 
-  #main-footer {
+  .main-footer {
     padding-top: 20px;
+    font-size: 12px;
   }
   .signup_image h1 {
     padding: 2rem;

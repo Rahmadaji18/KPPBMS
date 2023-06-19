@@ -1,22 +1,23 @@
 <template>
   <div class="bgl">
     <div class="bg">
-      <a href=""><img :src="photo" /></a>
+      <a href="https://www.instagram.com/konveksioase/" target="_blank"><img :src="photo" /></a>
       <div class="kata">
         <h1>{{ judul }}</h1>
         <p>{{ desc }}</p>
-        <a @click="showAlert" class="btn">{{ harga }}</a>
+        <a href="/dashboard/schedule" class="btn">{{ harga }}</a>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import web from "@/assets/images/website.png";
+import design from "@/assets/images/design.png";
 import Swal from "sweetalert2/dist/sweetalert2.js";
 import "sweetalert2/src/sweetalert2.scss";
 
 export default {
+  name: "DashDesign",
   props: {
     judul: {
       type: String,
@@ -32,7 +33,7 @@ export default {
     },
     photo: {
       type: String,
-      default: web,
+      default: design,
     },
   },
   methods: {
@@ -85,20 +86,16 @@ img {
   width: 400px;
   transition: 0.3s;
 
-  @media (max-width: 1270px) {
-    width: 400px;
+  @media (max-width: 480px) {
+    width: 300px;
+    margin-right: 2rem;
+    margin-left: 2rem;
   }
 
-  @media (max-width: 1140px) {
-    width: 350px;
-  }
-
-  @media (max-width: 1080px) {
-    font-size: 38px;
-  }
-
-  @media (max-width: 1000px) {
-    font-size: 38px;
+  @media (max-width: 400px) {
+    width: 275px;
+    margin-right: 2rem;
+    margin-left: 2rem;
   }
 }
 
@@ -146,6 +143,14 @@ img:hover {
   @media (max-width: 1000px) {
     font-size: 38px;
   }
+
+  @media (max-width: 480px) {
+    font-size: 28px;
+  }
+
+  @media (max-width: 400px) {
+    font-size: 24px;
+  }
 }
 
 .kata p {
@@ -161,6 +166,14 @@ img:hover {
 
   @media (max-width: 1000px) {
     font-size: 20px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 20px;
+  }
+
+  @media (max-width: 400px) {
+    font-size: 16px;
   }
 }
 

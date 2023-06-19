@@ -187,6 +187,21 @@ export default {
   cursor: pointer;
 }
 
+@media(max-width: 480px) {
+  .team .heading {
+    font-size: 30px;
+    margin-top: 3rem;
+    padding-top: 80px;
+  }
+
+  .caption {
+    font-size: 16px;
+    margin-bottom: 2rem;
+    margin-right: 1rem;
+    margin-right: 1rem;
+  }
+}
+
 /* .team .row .card::before,
 .team .row .card::after {
   content: "";

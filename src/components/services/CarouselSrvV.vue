@@ -41,15 +41,15 @@ export default defineComponent({
     return {
       images: [prj1, prj2, prj3, prj4, prj5, prj6, prj7, prj8, prj9],
       breakpoints: {
+        200: {
+          itemsToShow: 1,
+          snapAlign: "center",
+        },
         500: {
           itemsToShow: 1,
           snapAlign: "center",
         },
-        1000: {
-          itemsToShow: 2,
-          snapAlign: "start",
-        },
-        1200: {
+        800: {
           itemsToShow: 3,
           snapAlign: "center",
         },
@@ -80,6 +80,7 @@ export default defineComponent({
   font-size: 60px;
   color: var(--putih);
   margin: auto;
+  text-align: center;
 }
 
 .carousel__item {

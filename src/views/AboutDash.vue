@@ -1,26 +1,28 @@
+/* eslint-disable */
+
 <template>
   <NavDash></NavDash>
   <LandingPage></LandingPage>
-  <FormPage></FormPage>
-  <trackRecord></trackRecord>
-  <footerDash></footerDash>
+  <OurMission></OurMission>
+  <OurTeam></OurTeam>
+  <footerCom></footerCom>
 </template>
 
 <script>
 import NavDash from "@/components/dashboard/NavDash.vue";
-import LandingPage from "@/components/schedule/LandingPage.vue";
-import FormPage from "@/components/schedule/FormPage.vue";
-import trackRecord from "@/components/home/trackRecord.vue";
-import footerDash from "@/components/dashboard/footerDash.vue";
+import LandingPage from "@/components/about/LandingPage.vue";
+import OurMission from "@/components/about/OurMission.vue";
+import OurTeam from "@/components/about/OurTeam.vue";
+import footerCom from "@/components/home/footerCom.vue";
 
 export default {
-  name: "ScheduleView",
+  name: "AboutDash",
   components: {
     NavDash,
     LandingPage,
-    FormPage,
-    trackRecord,
-    footerDash,
+    OurMission,
+    OurTeam,
+    footerCom,
   },
 };
 </script>

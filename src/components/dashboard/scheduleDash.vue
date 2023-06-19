@@ -1,11 +1,8 @@
 <template>
   <div class="communicate">
     <h3>Perlu Diskusi dan Konsultasi?</h3>
-    <p>
-      Tim kreatif kami akan dengan senang hati membahas kebutuhan pembuatan branding <br />
-      yang sesuai dengan keinginan Kamu.
-    </p>
-    <button class="btn" @click="showAlert">Schedule Now</button>
+    <p>Tim kreatif kami akan dengan senang hati membahas kebutuhan pembuatan branding yang sesuai dengan keinginan Kamu.</p>
+    <a href="/dashboard/schedule"><button class="btn">Schedule Now</button></a>
   </div>
 </template>
 
@@ -18,19 +15,22 @@ export default {
 
 <style scoped>
 .communicate .btn {
-  outline: none;
+  border-radius: 10px;
   border: none;
-  border-radius: 1rem;
-  background: #ffd460;
+  background-color: var(--kuning);
+  color: var(--biru);
+  padding: 5px 14px;
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
   font-size: 1.5rem;
-  font-weight: 600;
-  cursor: pointer;
-  height: 3.5rem;
-  width: 12rem;
-  box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s;
-  color: #002e5f;
   margin-top: -20px;
+  cursor: pointer;
+  transition: ease-out 0.3s;
+
+  @media (max-width: 760px) {
+    padding: 5px 5px;
+    font-size: 16px;
+  }
 }
 .communicate .btn:hover {
   transform: scale(1.1);
@@ -56,13 +56,31 @@ export default {
   font-size: 50px;
   text-align: center;
   align-self: center;
+  line-height: 1;
+
+  @media (max-width: 1080px) {
+    margin-top: 3rem;
+  }
+
+  @media (max-width: 760px) {
+    font-size: 2rem;
+  }
 }
 .communicate p {
   font-size: 25px;
   text-align: center;
   align-self: center;
-  padding-bottom: 20px;
+  padding-inline: 16rem;
   margin-top: -30px;
-  line-height: 1;
+
+  @media (max-width: 1080px) {
+    font-size: 18px;
+    padding-inline: 5rem;
+  }
+
+  @media (max-width: 460px) {
+    font-size: 14px;
+    padding-inline: 3rem;
+  }
 }
 </style>

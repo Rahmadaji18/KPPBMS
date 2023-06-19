@@ -15,20 +15,114 @@
       ></iframe>
     </div>
     <div class="contact-form">
-      <form action="./contactme.php" method="POST">
-        <input type="text" name="name" placeholder="Name" class="contact-form-txt" required />
-        <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required placeholder="Contact Number" maxlength="10" class="contact-form-email" />
-        <input type="email" name="email" placeholder="Email" class="contact-form-email" required />
-        <input type="text" name="company" placeholder="Company or Brand Name" class="contact-form-email" required />
-        <input type="text" name="subject" placeholder="Subject (ex : collabs, complain)" class="contact-form-email" required />
-        <textarea placeholder="Your Message" name="message" class="contact-form-txtarea" required></textarea>
-        <input type="submit" value="Submit" name="submit" class="contact-form-btn" />
+      <form @submit.prevent="schedule">
+        <input type="text" name="nama" placeholder="Nama Lengkap" class="contact-form-txt" required v-model="nama" />
+        <input type="text" name="phone" required placeholder="Nomor Handphone" class="contact-form-email" v-model="phone" />
+        <input type="email" name="email" placeholder="Email" class="contact-form-email" required v-model="email" />
+        <input type="text" name="company" placeholder="Nama Perusahaan / Brand" class="contact-form-email" required v-model="company" />
+        <input type="text" name="subjek" placeholder="Subjek (ex : Konsultasi, etc)" class="contact-form-email" required v-model="subjek" />
+        <textarea type="text" placeholder="Masukkan Pesanmu..." name="message" class="contact-form-txtarea" required v-model="message"></textarea>
+        <input style="font-weight: bold" type="submit" value="Submit" class="contact-form-btn" required />
       </form>
     </div>
   </div>
 </template>
 
-<script></script>
+<script>
+import axios from "axios";
+import $cookies from "vue-cookies";
+$cookies.config("1h");
+import Swal from "sweetalert2/dist/sweetalert2.js";
+import "sweetalert2/src/sweetalert2.scss";
+
+export default {
+  name: "FormPage",
+  data() {
+    return {
+      nama: "",
+      phone: "",
+      email: "",
+      company: "",
+      subjek: "",
+      message: "",
+      msg: "",
+    };
+  },
+  methods: {
+    async schedule() {
+      await axios
+        .post("http://localhost:8081/dashboard/schedule", {
+          nama: this.nama,
+          phone: this.phone,
+          email: this.email,
+          company: this.company,
+          subjek: this.subjek,
+          message: this.message,
+        })
+        .then((res) => {
+          console.log(res.data);
+          if (res.data.msg === "Respon Terkirim!") {
+            Swal.fire({
+              icon: "success",
+              title: "Responmu Terkirim",
+              text: "Tunggu Tim Kami Menghubungimu Kembali Paling Lambat 2x24 Jam",
+              customClass: {
+                title: "swal2-title",
+                text: "swal2-textarea",
+                confirmButtonText: "swal2-confirm",
+                footer: "swal2-footer",
+                popup: "swal-popup",
+              },
+            }).then(() => {
+              this.$router.push("/dashboard");
+            });
+          } else if (res.data.msg === "Email Belum Terdaftar!") {
+            Swal.fire({
+              icon: "warning",
+              title: "Respon Gagal Terkirim",
+              text: "Email yang dimasukkan Belum Terdaftar, Gunakan Email yang Sudah Terdaftar.",
+              customClass: {
+                title: "swal2-title",
+                text: "swal2-textarea",
+                confirmButtonText: "swal2-confirm",
+                footer: "swal2-footer",
+                popup: "swal-popup",
+              },
+            });
+          } else if (res.data.msg === "Masukkan Data Terlebih Dahulu!") {
+            Swal.fire({
+              icon: "error",
+              title: "Gagal Terkirim",
+              text: "Masukkan Data Terlebih Dahulu!",
+              customClass: {
+                title: "swal2-title",
+                text: "swal2-textarea",
+                confirmButtonText: "swal2-confirm",
+                footer: "swal2-footer",
+                popup: "swal-popup",
+              },
+            });
+          }
+        })
+        .catch((err) => {
+          Swal.fire({
+            title: "Respon Error",
+            text: "Sepertinya Ada Masalah, Coba Lagi Nanti!",
+            icon: "error",
+            customClass: {
+              title: "swal2-title",
+              text: "swal2-textarea",
+              confirmButtonText: "swal2-confirm",
+              footer: "swal2-footer",
+              popup: "swal-popup",
+            },
+          });
+          console.error(err);
+        });
+    },
+  },
+};
+</script>
 
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap");
@@ -91,7 +185,7 @@
   height: 40px;
   color: #000;
   border: 1px solid #bcbcbc;
-  border-radius: 50px;
+  border-radius: 10px;
   outline: none;
   margin-bottom: 20px;
   padding: 15px;
@@ -102,7 +196,7 @@
   height: 40px;
   color: #000;
   border: 1px solid #bcbcbc;
-  border-radius: 50px;
+  border-radius: 10px;
   outline: none;
   margin-bottom: 20px;
   padding: 15px;
@@ -114,12 +208,13 @@
 			font-family: "Poppins", sans-serif;
 			font-weight: 500;
 		} */
-/* .contact-form-email::placeholder {
-  color: #aaa;
-  font-size: 16px;
-  font-family: "Poppins", sans-serif;
-  font-weight: 500;
-} */
+/* .contact-form-email::placeholder
+		{
+			color: #aaa;
+            font-size: 16px;
+			font-family: "Poppins", sans-serif;
+			font-weight: 500;
+		} */
 .contact-form-txtarea {
   margin-left: 2rem;
   width: 85%;
@@ -131,17 +226,19 @@
   margin-bottom: 20px;
   padding: 15px;
   font-family: "Poppins", sans-serif;
+  font-size: 14px;
 }
-/* .contact-form-txtarea::placeholder {
-  color: #aaa;
-  font-size: 1.5rem;
-} */
+/* .contact-form-txtarea::placeholder
+		{
+			color: #aaa;
+            font-size: 1.5rem;
+		} */
 
 .contact-form-btn {
   margin-left: 8.5rem;
   outline: none;
   border: none;
-  border-radius: 5rem;
+  border-radius: 10px;
   background: var(--biru);
   border-style: none;
   border-color: none;
@@ -164,15 +261,16 @@
   height: 40px;
   color: #000;
   border: 1px solid #bcbcbc;
-  border-radius: 50px;
+  border-radius: 10px;
   outline: none;
   margin-bottom: 20px;
   padding: 15px;
 }
-/* .contact-form-phone::placeholder {
-  color: #aaa;
-  font-size: 1.5rem;
-} */
+/* .contact-form-phone::placeholder
+		{
+			color: #aaa;
+            font-size: 1.5rem;
+		} */
 
 .contact {
   text-align: center;
@@ -186,11 +284,11 @@
 
 @media (max-width: 900px) {
   .contact .heading {
-    font-size: 57px;
+    font-size: 3rem;
   }
 
   .kuning {
-    font-size: 57px;
+    font-size: 3rem;
   }
 
   .paragraf p {
@@ -220,29 +318,73 @@
     margin-left: 13.5rem;
   }
 
-  /* .contact-form-email::placeholder {
-    font-size: 12px;
-  } */
+  /* .contact-form-email::placeholder
+		{
+            font-size: 12px;
+		} */
 }
 
-/* @media (max-width: 768px) {
-    .satu {
-        font-size: 40px;
-    }
+@media (max-width: 900px) {
+  .contact .heading {
+    font-size: 2rem;
+  }
 
-    .kuning {
-        font-size: 40px;
-    }
+  .kuning {
+    font-size: 2rem;
+  }
 
-    .paragraf p {
-        font-size: 16px;
-        margin-left: 50px;
-        margin-right: 50px;
-    }
-} */
+  .paragraf p {
+    font-size: 16px;
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+
+  .contact-form-btn {
+    margin-left: 14.5rem;
+  }
+
+  .contact-form-txt {
+    width: 90%;
+  }
+  .contact-form-email {
+    width: 90%;
+  }
+  .contact-form-txtarea {
+    width: 90%;
+  }
+}
+@media (max-width: 768px) {
+  .contact .heading {
+    font-size: 46px;
+  }
+
+  .kuning {
+    font-size: 46px;
+  }
+
+  .paragraf p {
+    font-size: 16px;
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+
+  .contact-form-btn {
+    margin-left: 13.5rem;
+  }
+
+  .contact-form-txt {
+    width: 90%;
+  }
+  .contact-form-email {
+    width: 90%;
+  }
+  .contact-form-txtarea {
+    width: 90%;
+  }
+}
 
 @media (max-width: 480px) {
-  .satu {
+  .contact .heading {
     font-size: 30px;
   }
 
@@ -254,6 +396,20 @@
     font-size: 14px;
     margin-left: 30px;
     margin-right: 30px;
+  }
+
+  .contact-form-btn {
+    margin-left: 4rem;
+  }
+
+  .contact-form-txt {
+    width: 80%;
+  }
+  .contact-form-email {
+    width: 80%;
+  }
+  .contact-form-txtarea {
+    width: 80%;
   }
 }
 </style>

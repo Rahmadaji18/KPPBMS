@@ -20,7 +20,7 @@
           <input style="font-weight: bold" type="submit" value="Log In" class="btn primary-btn" required />
         </form>
         <div class="links">
-          <a href="https://api.whatsapp.com/send/?phone=6282140759677&text&type=phone_number&app_absent=0" target="_blank">Forgot Password</a>
+          <a href="/forgotpassword">Forgot Password</a>
         </div>
         <div class="or">
           <hr class="bar" />
@@ -80,6 +80,7 @@ export default {
               },
             }).then(() => {
               localStorage.setItem("loggedIn", true);
+              localStorage.setItem("username", this.username);
               // Redirect to homepage
               this.$router.push("/dashboard");
             });
@@ -165,8 +166,8 @@ export default {
 
 #signin form {
   width: 80%;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
 }
 
 #signin .logo h1 {
@@ -220,6 +221,10 @@ export default {
   width: 60%;
 }
 
+#signin .links {
+  margin-top: -20px;
+}
+
 #signin .links a {
   display: block;
   color: #002855;
@@ -227,6 +232,17 @@ export default {
   margin-bottom: 1rem;
   text-align: center;
   font-size: 0.9rem;
+  cursor: pointer;
+}
+
+#signin .links a:hover {
+  display: block;
+  color: #002855;
+  text-decoration: none;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: bold;
 }
 
 #signin .or {
@@ -488,8 +504,8 @@ export default {
 }
 
 @media (max-width: 400px) {
-  header .logo {
-    font-size: 1.5rem;
+  #signin .logo h1 {
+    font-size: 30px;
   }
 
   header .icons a {
@@ -585,7 +601,7 @@ export default {
 
   #left {
     justify-content: start;
-    margin-top: 4vh;
+    margin-top: 0vh;
   }
 
   #signin .logo {
@@ -597,7 +613,9 @@ export default {
   }
 
   #main-footer {
-    padding-top: 1rem;
+    padding-top: 20px;
+    font-size: 12px;
+    /* padding-inline: 70px; */
   }
   .signup_image h1 {
     padding: 2rem;
