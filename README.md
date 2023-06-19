@@ -20,5 +20,15 @@ npm run build
 npm run lint
 ```
 
+### Carousel Effect
+```
+npm install vue3-carousel
+```
+
+### Sweet Alert Pop Up
+```
+npm install sweetalert2
+```
+
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
