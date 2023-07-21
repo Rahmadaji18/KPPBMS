@@ -188,8 +188,8 @@ i {
   font-weight: 800;
   margin-bottom: -10px;
 
-  @media (max-width: 1270px) {
-    font-size: 50px;
+  @media (max-width: 1290px) {
+    font-size: 46px;
   }
 
   @media (max-width: 600px) {

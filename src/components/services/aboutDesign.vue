@@ -109,8 +109,13 @@ img:hover {
   gap: 30px;
   width: 50%;
 
+  @media (max-width: 1000px){
+    align-items: center;
+  }
+
   @media (max-width: 700px) {
     width: 60%;
+    text-align: center;
   }
 
   @media (max-width: 600px) {
@@ -141,6 +146,7 @@ img:hover {
 
   @media (max-width: 1000px) {
     font-size: 38px;
+    text-align: center;
   }
 
   @media (max-width: 480px) {
@@ -165,6 +171,7 @@ img:hover {
 
   @media (max-width: 1000px) {
     font-size: 20px;
+    text-align: center;
   }
 
   @media (max-width: 480px) {
