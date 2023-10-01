@@ -25,10 +25,10 @@
           </div>
           <div class="info">
             <h3>Mutiara Nurhaliza</h3>
-            <div class="icons">        
+            <div class="icons">
               <a href="" class="fa-facebook" target="_blank"><font-awesome-icon icon="fa-brands fa-facebook" size="sm" /></a>
               <a href="" class="fa-instagram" target="_blank"><font-awesome-icon icon="fa-brands fa-instagram" size="sm" /></a>
-              <a href="" class="fa-linkedin" target="_blank"><font-awesome-icon icon="fa-brands fa-linkedin" size="sm" /></a>  
+              <a href="" class="fa-linkedin" target="_blank"><font-awesome-icon icon="fa-brands fa-linkedin" size="sm" /></a>
             </div>
           </div>
         </div>
@@ -43,7 +43,7 @@
             <div class="icons">
               <a href="" class="fa-facebook" target="_blank"><font-awesome-icon icon="fa-brands fa-facebook" size="sm" /></a>
               <a href="" class="fa-instagram" target="_blank"><font-awesome-icon icon="fa-brands fa-instagram" size="sm" /></a>
-              <a href="" class="fa-linkedin" target="_blank"><font-awesome-icon icon="fa-brands fa-linkedin" size="sm" /></a>  
+              <a href="" class="fa-linkedin" target="_blank"><font-awesome-icon icon="fa-brands fa-linkedin" size="sm" /></a>
             </div>
           </div>
         </div>
@@ -55,10 +55,10 @@
           </div>
           <div class="info">
             <h3>Rahmad Aji Wicaksono</h3>
-            <div class="icons">    
+            <div class="icons">
               <a href="" class="fa-facebook" target="_blank"><font-awesome-icon icon="fa-brands fa-facebook" size="sm" /></a>
               <a href="" class="fa-instagram" target="_blank"><font-awesome-icon icon="fa-brands fa-instagram" size="sm" /></a>
-              <a href="" class="fa-linkedin" target="_blank"><font-awesome-icon icon="fa-brands fa-linkedin" size="sm" /></a>  
+              <a href="" class="fa-linkedin" target="_blank"><font-awesome-icon icon="fa-brands fa-linkedin" size="sm" /></a>
             </div>
           </div>
         </div>
@@ -70,10 +70,10 @@
           </div>
           <div class="info">
             <h3>Arsyad Rizanta Maulana S</h3>
-            <div class="icons">     
+            <div class="icons">
               <a href="" class="fa-facebook" target="_blank"><font-awesome-icon icon="fa-brands fa-facebook" size="sm" /></a>
               <a href="" class="fa-instagram" target="_blank"><font-awesome-icon icon="fa-brands fa-instagram" size="sm" /></a>
-              <a href="" class="fa-linkedin" target="_blank"><font-awesome-icon icon="fa-brands fa-linkedin" size="sm" /></a>  
+              <a href="" class="fa-linkedin" target="_blank"><font-awesome-icon icon="fa-brands fa-linkedin" size="sm" /></a>
             </div>
           </div>
         </div>
@@ -119,8 +119,6 @@ export default {
   font-size: 64px;
   font-weight: 800;
   font-family: "Montserrat";
-  margin-top: 7rem;
-  padding-top: 100px;
 }
 
 .caption {
@@ -219,7 +217,7 @@ export default {
   cursor: pointer;
 }
 
-@media(max-width: 480px) {
+@media (max-width: 480px) {
   .team .heading {
     font-size: 30px;
     margin-top: 3rem;

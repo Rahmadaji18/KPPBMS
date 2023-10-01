@@ -5,16 +5,16 @@
         <h1>We Are Always Innovate</h1>
       </div>
       <div>
-        <vue3-autocounter class="num" ref="counter" :startAmount="0" :endAmount="1080" :duration="5" prefix="" suffix="" separator="" decimalSeparator="" :decimals="0" :autoinit="true" />
+        <vue3-autocounter class="num" ref="counter" :startAmount="0" :endAmount="30" :duration="5" prefix="" suffix="" separator="" decimalSeparator="" :decimals="0" :autoinit="true" />
         <h2>Days<br />Experience</h2>
       </div>
       <div>
-        <vue3-autocounter class="num" ref="counter" :startAmount="0" :endAmount="348" :duration="5" prefix="" suffix="" separator="" decimalSeparator="" :decimals="0" :autoinit="true" />
-        <h2>Projects<br />Completed</h2>
+        <vue3-autocounter class="num" ref="counter" :startAmount="0" :endAmount="5" :duration="5" prefix="" suffix="" separator="" decimalSeparator="" :decimals="0" :autoinit="true" />
+        <h2>Members<br />of Group</h2>
       </div>
       <div>
-        <vue3-autocounter class="num" ref="counter" :startAmount="0" :endAmount="328" :duration="5" prefix="" suffix="" separator="" decimalSeparator="" :decimals="0" :autoinit="true" />
-        <h2>Total<br />Clients</h2>
+        <vue3-autocounter class="num" ref="counter" :startAmount="0" :endAmount="22" :duration="5" prefix="" suffix="" separator="" decimalSeparator="" :decimals="0" :autoinit="true" />
+        <h2>Total<br />BMS Group</h2>
       </div>
     </div>
   </section>

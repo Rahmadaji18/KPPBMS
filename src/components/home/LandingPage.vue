@@ -3,9 +3,10 @@
     <div class="first">
       <div class="kata">
         <div class="judul">
-          <h1>Hello!</h1>
+          <h1>Hello Everyone!</h1>
           <h1>Welcome To</h1>
           <h1 class="kuning">BMS 15</h1>
+          <p style="font-size: medium; margin-top: 1rem">Ini adalah KPP BMS kami. Terima kasih BMS, kami akhirnya cukup paham tentang materi permediaan. Doakan tetap kuat di kala gempuran prkatikum. Aamiin.</p>
         </div>
       </div>
       <img :src="gambar" />

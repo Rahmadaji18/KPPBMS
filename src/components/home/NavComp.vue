@@ -3,8 +3,8 @@
     <div class="wrapnav">
       <nav class="normal" v-if="!mobile">
         <div class="menu"><a href="/">Home</a></div>
-        <div class="menu"><a href="">MOT</a></div>
-        <a href=""><div class="btn">Konten</div></a>
+        <div class="menu"><a href="#team">MOT</a></div>
+        <a href="#ourservices"><div class="btn">Konten</div></a>
       </nav>
       <div class="mobile" v-if="mobile">
         <a href="login"><div class="btn">Login</div></a>

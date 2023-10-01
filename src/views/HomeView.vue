@@ -1,24 +1,19 @@
 <template>
   <NavComp></NavComp>
   <LandingPage />
-  <AboutUs />
-  <OurService />
   <trackRecord> </trackRecord>
+  <OurService />
   <CarouselComp />
-  <scheduleNow> </scheduleNow>
-  <FAQComp />
   <footerCom></footerCom>
 </template>
 
 <script>
 import NavComp from "@/components/home/NavComp.vue";
 import LandingPage from "@/components/home/LandingPage.vue";
-import AboutUs from "@/components/home/homeAboutUs.vue";
 import OurService from "@/components/home/homeOurService.vue";
-import FAQComp from "@/components/home/FAQComp.vue";
 import CarouselComp from "@/components/home/CarouselComp.vue";
 import trackRecord from "@/components/home/trackRecord.vue";
-import scheduleNow from "@/components/home/scheduleNow.vue";
+
 import footerCom from "@/components/home/footerCom.vue";
 
 export default {
@@ -26,12 +21,9 @@ export default {
   components: {
     NavComp,
     LandingPage,
-    AboutUs,
     OurService,
     trackRecord,
     CarouselComp,
-    scheduleNow,
-    FAQComp,
     footerCom,
   },
 };

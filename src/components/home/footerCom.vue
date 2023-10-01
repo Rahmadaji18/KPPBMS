@@ -1,63 +1,16 @@
 <template>
   <footer class="footer">
-    <div class="footer_main">
-      <div class="footer_info">
-        <H2>Contact Us</H2>
-        <p>Jalan Ploso Timur VA No.60, Kec. Tambaksari, Surabaya, Indonesia<br />Email : inikaryakita20@gmail.com<br />Phone : (+62)-8214-0759-677</p>
-      </div>
-      <div class="footer_link">
-        <h2>Useful Links</h2>
-        <div class="link_column">
-          <div>
-            <a href="/">Home</a>
-            <a href="about">About Us</a>
-            <a href="#ourservices">Our Service</a>
-            <a href="#latestprojects">Latest Project</a>
-            <a href="#faq">FAQ</a>
-          </div>
-        </div>
-      </div>
-      <div class="footer_schedule">
-        <h2>Schedule Now</h2>
-        <p>
-          Jika kamu tertarik dengan layanan <br />
-          branding kami, segera jadwalkan untuk berdiskusi bersama secara gratis.
-        </p>
-        <a> <button class="btn" @click="showAlert">Schedule Now</button></a>
-      </div>
-    </div>
     <div class="footer_secondary">
-      <p>Copyright &copy; 2023 Ini Karya Kita. All right reserved.</p>
+      <p>Copyright &copy; 2023 BMS Kelompok 15. All right reserved.</p>
     </div>
   </footer>
 </template>
 
 <script>
-import Swal from "sweetalert2/dist/sweetalert2.js";
-import "sweetalert2/src/sweetalert2.scss";
-
 export default {
   name: "footerCom",
   props: {},
-  methods: {
-    showAlert() {
-      // Use sweetalert2
-      Swal.fire({
-        icon: "error",
-        title: "Kamu Harus Login/Signup",
-        text: "Menu ini hanya bisa digunakan jika kamu sudah melakukan login/signup",
-        footer: '<a href="login">Login Sekarang</a>',
-        confirmButtonText: "Okey",
-        customClass: {
-          title: "swal2-title",
-          text: "swal2-textarea",
-          confirmButtonText: "swal2-confirm",
-          footer: "swal2-footer",
-          popup: "swal-popup",
-        },
-      });
-    },
-  },
+  methods: {},
 };
 </script>
 
@@ -66,7 +19,6 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 25px;
   background-color: #ffffff;
   color: #002e5f;
   /*padding:2rem;*/
