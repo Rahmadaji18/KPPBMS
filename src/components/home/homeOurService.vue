@@ -28,10 +28,10 @@ export default {
   data() {
     return {
       service: [
-        { judul: "Photography", desc: "Pembuatan foto komersial untuk keperluan produk atau jasa dengan berbagai paket menarik dan harga terjangkau", link: "/photography", img: photo },
-        { judul: "Videography", desc: "Video komersil untuk keperluan promosi produk, jasa, event, instansi, dan sebagainya. Pilih sesuai kebutuhanmu", link: "/videography", img: video },
-        { judul: "Graphics Design", desc: "Pembuatan desain visual untuk mendukung brandingmu. Dari logo, packaging, stationery, hingga feed social media", link: "/graphicsdesign", img: graphic },
-        { judul: "Web Development", desc: "Buat website mu dari awal atau remake dengan teknologi dan desain kekinian. Temukan kebutuhan websitemu di sini", link: "/webdevelopment", img: web },
+        { judul: "Photography", desc: "Penjelasan dasar mengenai dasar dasar fotografi sekaligus dengan praktiknya. Dijelaskan mengenai ISO, shutter speed, dan white balance", link: "/photography", img: photo },
+        { judul: "Jurnalistik", desc: "Penjelasan dasar mengenai  jurnalistik, sperti cara dan etika wawancara. Dilakukan praktikk wawancara dengan studi kasus pembukaan tower 2 ITS", link: "/videography", img: video },
+        { judul: "Web Design", desc: "Pembuatan desain visual untuk desain web menggunakan figma. Studi kasus dengan membuat web halaman IT menggunakan figma", link: "/graphicsdesign", img: graphic },
+        { judul: "Web Development", desc: "Penjelasan dasar pengembangan web menggunakan framework vue js dan membangun repository web di github", link: "/webdevelopment", img: web },
       ],
     };
   },

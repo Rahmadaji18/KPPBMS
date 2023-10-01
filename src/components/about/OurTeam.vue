@@ -9,13 +9,7 @@
             <img :src="adfi" alt="Adfi" />
           </div>
           <div class="info">
-            <h3>Iki Adfi Nur Mohamad</h3>
-            <span>Chief Executive Officer</span>
-            <div class="icons">
-              <a href="https://www.facebook.com/iki.adfi.7?mibextid=ZbWKwL" class="fa-facebook" target="_blank"><font-awesome-icon icon="fa-brands fa-facebook" size="sm" /></a>
-              <a href="https://instagram.com/ini.adfi" class="fa-instagram" target="_blank"><font-awesome-icon icon="fa-brands fa-instagram" size="sm" /></a>
-              <a href="https://www.linkedin.com/in/iki-adfi-nur-mohamad-485b06248" class="fa-linkedin" target="_blank"><font-awesome-icon icon="fa-brands fa-linkedin" size="sm" /></a>
-            </div>
+            <h3>Iki Adfi Nur Mohamad</h3> 
           </div>
         </div>
       </div>
@@ -26,12 +20,6 @@
           </div>
           <div class="info">
             <h3>Ilhan Ahmad Syafa</h3>
-            <span>Chief Executive Business</span>
-            <div class="icons">
-              <a href="https://www.facebook.com/Ilhan.ahmad.syafa/" class="fa-facebook" target="_blank"><font-awesome-icon icon="fa-brands fa-facebook" size="sm" /></a>
-              <a href="https://instagram.com/ilhanahmads" class="fa-instagram" target="_blank"><font-awesome-icon icon="fa-brands fa-instagram" size="sm" /></a>
-              <a href="https://www.linkedin.com/in/ilhan-ahmad-syafa-754810248/" class="fa-linkedin" target="_blank"><font-awesome-icon icon="fa-brands fa-linkedin" size="sm" /></a>
-            </div>
           </div>
         </div>
       </div>
@@ -43,11 +31,6 @@
           <div class="info">
             <h3>Muhammad Zidan H.</h3>
             <span>Chief Executive Technology</span>
-            <div class="icons">
-              <a href="https://www.facebook.com/profile.php?id=100085961344251" class="fa-facebook" target="_blank"><font-awesome-icon icon="fa-brands fa-facebook" size="sm" /></a>
-              <a href="https://instagram.com/zzzddn_" class="fa-instagram" target="_blank"><font-awesome-icon icon="fa-brands fa-instagram" size="sm" /></a>
-              <a href="https://www.linkedin.com/in/zidan-hadipratama-715a41248/?originalSubdomain=id" class="fa-linkedin" target="_blank"><font-awesome-icon icon="fa-brands fa-linkedin" size="sm" /></a>
-            </div>
           </div>
         </div>
       </div>
