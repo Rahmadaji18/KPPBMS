@@ -1,26 +1,10 @@
 <template>
   <header>
     <div class="wrapnav">
-      <a href="/"><img src="@/assets/images/logo.png" alt="Logo" /></a>
       <nav class="normal" v-if="!mobile">
-        <div class="menu"><a href="about">About</a></div>
-        <div class="menu drop" @click="showDrop">
-          <a class="s"
-            >Service
-            <svg viewBox="0 0 1030 638" width="10">
-              <path d="M1017 68L541 626q-11 12-26 12t-26-12L13 68Q-3 49 6 24.5T39 0h952q24 0 33 24.5t-7 43.5z" fill="var(--biru)"></path></svg
-          ></a>
-          <transition name="drop1">
-            <div class="dropdown1" v-if="drop">
-              <div class="sub menu"><a href="photography">Fotografi</a></div>
-              <div class="sub menu"><a href="videography">Videografi</a></div>
-              <div class="sub menu"><a href="graphicsdesign">Design Grafis</a></div>
-              <div class="sub menu"><a href="webdevelopment">Web Development</a></div>
-            </div>
-          </transition>
-        </div>
-        <div class="menu" @click="showAlert"><a>Schedule</a></div>
-        <a href="login"><div class="btn">Login</div></a>
+        <div class="menu"><a href="/">Home</a></div>
+        <div class="menu"><a href="">MOT</a></div>
+        <a href=""><div class="btn">Konten</div></a>
       </nav>
       <div class="mobile" v-if="mobile">
         <a href="login"><div class="btn">Login</div></a>
@@ -168,7 +152,7 @@ header {
 .wrapnav {
   display: flex;
   align-content: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   width: 80%;
   max-width: 100%;
   font-family: Poppins, Montserrat, sans-serif;

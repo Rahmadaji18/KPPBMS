@@ -1,6 +1,7 @@
 <template>
   <div class="bg" id="latestprojects">
-    <h1>Latest Project</h1>
+    <h1 style="color: #F7D35D">Meet Our Team</h1>
+    <h4 style="color: white;">Kelompok 15 - BMS Teknologi Informasi 2023</h4>
     <div class="bgc">
       <Carousel :autoplay="2000" :itemsToShow="3.95" :wrapAround="true" :transition="500" :breakpoints="breakpoints">
         <Slide v-for="slide in images" :key="slide">
@@ -64,6 +65,7 @@ export default defineComponent({
 <style scoped>
 .bg {
   display: flex;
+  background: linear-gradient(90deg, #002855, #001635);
   flex-direction: column;
   align-items: center;
   justify-items: center;

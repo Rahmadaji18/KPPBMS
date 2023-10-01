@@ -5,10 +5,8 @@
         <div class="judul">
           <h1>Hello!</h1>
           <h1>Welcome To</h1>
-          <h1 class="kuning">Ini Karya Kita</h1>
+          <h1 class="kuning">BMS 15</h1>
         </div>
-        <p>Temukan penawaran layanan branding terbaikmu dalam 1 platform dengan sistem <i>One Door Branding Services.</i></p>
-        <button class="btnl" @click="showAlert">Schedule</button>
       </div>
       <img :src="gambar" />
     </div>

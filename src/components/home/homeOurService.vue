@@ -1,8 +1,8 @@
 <template>
   <div class="bg" id="ourservices">
     <div class="bg2">
-      <h1>Our Service</h1>
-      <p>Kami membantu kamu membangun solusi dan branding berkualitas tinggi. Kami menyediakan layanan profesional yang dapat disesuaikan dengan kebutuhanmu.</p>
+      <h1>Project</h1>
+      <p>Project yang telah kami buat selama menjalani BMS</p>
       <div class="service">
         <div v-for="serve in service" :key="serve.id" class="cardServe">
           <img :src="serve.img" />
